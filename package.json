@@ -33,6 +33,12 @@
     "eslint": "5.10.0",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.14.0",
+    "husky": "^1.2.0",
     "mocha": "5.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test && npm run lint"
+    }
   }
 }
