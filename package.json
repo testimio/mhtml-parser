@@ -1,0 +1,34 @@
+{
+  "name": "mhtml-parser",
+  "version": "1.0.1",
+  "description": "Parses mhtml files",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha src/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/testimio/mhtml-parser.git"
+  },
+  "keywords": [
+    "Parses",
+    "mhtml",
+    "files"
+  ],
+  "author": "dev@testim.io",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/testimio/mhtml-parser/issues"
+  },
+  "homepage": "https://github.com/testimio/mhtml-parser#readme",
+  "dependencies": {
+    "cheerio": "1.0.0-rc.2",
+    "css-tree": "1.0.0-alpha.29",
+    "filenamify": "2.1.0",
+    "quoted-printable": "1.0.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
