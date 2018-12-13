@@ -38,9 +38,10 @@ module.exports = class Parser {
   }
 
   spit() {
-    return this.parts.map(({location, body }) => ({
+    return this.parts.map(({location, body, type }) => ({
       filename: this.rewriteFn(location),
-      content: body
+      content: body,
+      type: type
     }));
   }
 

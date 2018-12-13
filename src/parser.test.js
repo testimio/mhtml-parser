@@ -32,6 +32,24 @@ describe("the mhtml parser", () => {
     expect(results[0].content.trim()).to.equal('<html><head></head><body><img src="http!example.com!1.jpg">\n</body></html>');
   });
 
+
+  it("parses mime types of frames", () => {
+    let mhtml = build([{
+      body: "<html><body><img src='http://example.com/1.jpg'></body></html>",
+      location: "http://example.com/main.html"
+    }, {
+      body: "a2FrYQ==",
+      transferEncoding: "base64",
+      location: "http://example.com/1.jpg",
+      type: "image/jpeg"
+    }]);
+    let p = new Parser();
+    let results = p.parse(mhtml).rewrite().spit();
+    expect(results.length).to.equal(2);
+    expect(results[0].type).to.equal("text/html");
+    expect(results[1].type).to.equal("image/jpeg");
+  });
+
   it("parses basic files multiple with image links", () => {
     let mhtml = build([{
       body: "<html><body><img src='http://example.com/1.jpg'><img src='http://example.com/1.jpg'></body></html>",
@@ -194,6 +212,23 @@ describe("the mhtml parser", () => {
     let results = p.parse(mhtml).rewrite().spit();
     expect(results.length).to.equal(2);
     expect(results[0].content.trim()).to.equal("body{background-image:url('http!example.com!1.jpg');background:url('http!example.com!1.jpg')}");
+  });
+
+  it("extracts mime types", () => {
+    let mhtml = build([{
+      body: "body{background-image:url(http://example.com/1.jpg);background:url(http://example.com/1.jpg);}",
+      type: "text/css"
+    }, {
+      body: "a2FrYQ==",
+      transferEncoding: "base64",
+      location: "http://example.com/1.jpg",
+      type: "image/jpeg"
+    }]);
+    let p = new Parser();
+    let results = p.parse(mhtml).rewrite().spit();
+    expect(results.length).to.equal(2);
+    expect(results[0].type).to.equal("text/css");
+    expect(results[1].type).to.equal("image/jpeg");
   });
 
 
