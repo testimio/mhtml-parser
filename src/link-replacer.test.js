@@ -1,5 +1,5 @@
+const { expect } = require('chai');
 const { css, html, svg } = require('./link-replacer');
-const expect = require('chai').expect;
 
 describe('link replacing', () => {
   describe('css', () => {

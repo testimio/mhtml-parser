@@ -25,7 +25,8 @@ module.exports = class Parser {
   }
 
   rewrite() {
-    const rewriteMap = new Map(this.parts.map(part => [part.location, this.rewriteFn(part.location)]));
+    const entries = this.parts.map(part => [part.location, this.rewriteFn(part.location)]);
+    const rewriteMap = new Map(entries);
     for (const part of this.parts.filter(x => x.id)) {
       rewriteMap.set(`cid:${part.id}`, this.rewriteFn(part.location));
     }

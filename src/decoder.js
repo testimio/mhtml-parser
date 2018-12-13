@@ -9,7 +9,7 @@ module.exports = (encoding, body) => {
     case '8bit':
     case '7bit':
     case 'binary':
-      return str; // already after a Buffer.toString here
+      return body; // already after a Buffer.toString here
     default:
       throw new Error(`Unknown encoding ${encoding}body: ${body}`);
   }

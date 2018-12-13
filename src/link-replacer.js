@@ -1,6 +1,6 @@
 const cheerio = require('cheerio');
 const csstree = require('css-tree');
-const URL = require('url').URL;
+const { URL } = require('url');
 
 module.exports = {
   html(domString, resourcesMap, baseUrl) {
@@ -48,7 +48,7 @@ module.exports = {
     $('meta[http-equiv=refresh]').each((i, el) => {
       el = $(el);
       const re = /(\d)+; ?URL='?([^']*)'?/gi;
-      const [_, seconds, url] = re.exec(el.attr('content'));
+      const [, seconds, url] = re.exec(el.attr('content'));
       const link = new URL(url, baseUrl).toString();
       const mapped = resourcesMap.get(link) || link;
       el.attr('content', `${seconds}; url=${mapped}`);
@@ -87,7 +87,7 @@ module.exports = {
       if (this.declaration === null || node.type !== 'Url') {
         return;
       }
-      const value = node.value;
+      const { value } = node;
       if (value.type === 'Raw') {
         const link = new URL(value.value, baseUrl).toString();
         const mapped = resourcesMap.get(link) || link;
