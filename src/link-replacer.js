@@ -4,7 +4,10 @@ const { URL } = require('url');
 
 module.exports = {
   html(domString, resourcesMap, baseUrl) {
-    const $ = cheerio.load(domString);
+    const $ = cheerio.load(domString, {
+      _useHtmlParser2: true, // cheerio 1 uses parse5 by default which is half the speed
+      lowerCaseTags: false,
+    });
     const pageBase = $('base[href]').attr('href');
 
     if (pageBase) {
@@ -82,7 +85,7 @@ module.exports = {
     return $.html();
   },
   css(cssString, resourcesMap, baseUrl) {
-    const ast = csstree.parse(cssString);
+    const ast = csstree.parse(cssString, { parseRulePrelude: false });
     csstree.walk(ast, (node) => {
       if (this.declaration === null || node.type !== 'Url') {
         return;

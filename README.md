@@ -16,6 +16,17 @@ const result = p.parse(mhtmlFileContents) // parse file
 
 ## API
 
+### Processor
+
+The processor provices a convenience method for converting a .mhtml file to multiple files. 
+
+It provides a single convert static method
+
+```js
+const { Processor } = require("./src/index");
+Processor.convert("one.mhtml"); // returns a promise that fulfills when the conversion is done
+```
+
 ### `new Parser([config])`
 
 Creates a new mhtml parser with the given rewriteFn mhtml file contents. Example:

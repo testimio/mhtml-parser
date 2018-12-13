@@ -18,8 +18,10 @@ module.exports = class Parser {
     if (!separatorMatch) {
       throw new Error('No separator');
     }
-    const separator = separatorMatch[1];
-    const parts = file.split(new RegExp(`.*${separator}.*`)).slice(1).filter(x => x.length < this.maxFileSize && x.trim()).map(Parser.parsePart);
+    const separator = `--${separatorMatch[1]}`;
+    const parts = file.split(separator)
+      .slice(1)
+      .filter(x => x.length < this.maxFileSize && x.length > 10 && x.trim()).map(Parser.parsePart);
     this.parts = parts;
     return this;
   }

@@ -1,11 +1,11 @@
-const quotedPrintable = require('quoted-printable');
+
 
 module.exports = (encoding, body) => {
   switch (encoding) {
     case 'base64':
       return Buffer.from(body, 'base64').toString('utf8');
     case 'quoted-printable':
-      return quotedPrintable.decode(body);
+      return body.replace(/=([a-fA-F0-9]{2})/g, (whole, relevant) => String.fromCharCode(parseInt(relevant, 16)));
     case '8bit':
     case '7bit':
     case 'binary':

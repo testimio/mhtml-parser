@@ -12,7 +12,7 @@ describe('the mhtml parser', () => {
     const results = p.parse(mhtml).rewrite().spit();
     expect(results.length).to.equal(1);
     expect(results[0].filename).to.equal('http!testim.io');
-    expect(results[0].content.trim()).to.equal('<html><head></head><body>Hello World!\n</body></html>');
+    expect(results[0].content.trim()).to.equal('<html><body>Hello World!</body></html>');
   });
 
   it('parses basic files with image links', () => {
@@ -29,7 +29,7 @@ describe('the mhtml parser', () => {
     const results = p.parse(mhtml).rewrite().spit();
     expect(results.length).to.equal(2);
     expect(results[0].filename).to.equal('http!example.com!main.html');
-    expect(results[0].content.trim()).to.equal('<html><head></head><body><img src="http!example.com!1.jpg">\n</body></html>');
+    expect(results[0].content.trim()).to.equal('<html><body><img src="http!example.com!1.jpg"></body></html>');
   });
 
 
@@ -64,7 +64,7 @@ describe('the mhtml parser', () => {
     const results = p.parse(mhtml).rewrite().spit();
     expect(results.length).to.equal(2);
     expect(results[0].filename).to.equal('http!example.com!main.html');
-    expect(results[0].content.trim()).to.equal('<html><head></head><body><img src="http!example.com!1.jpg"><img src="http!example.com!1.jpg">\n</body></html>');
+    expect(results[0].content.trim()).to.equal('<html><body><img src="http!example.com!1.jpg"><img src="http!example.com!1.jpg"></body></html>');
   });
 
   it('parses iframes files', () => {
@@ -80,7 +80,7 @@ describe('the mhtml parser', () => {
     const results = p.parse(mhtml).rewrite().spit();
     expect(results.length).to.equal(2);
     expect(results[0].filename).to.equal('http!example.com!main.html');
-    expect(results[0].content.trim()).to.equal('<html><head></head><body><iframe src="http!example.com!frame.html"></iframe>\n</body></html>');
+    expect(results[0].content.trim()).to.equal('<html><body><iframe src="http!example.com!frame.html"></iframe></body></html>');
   });
 
   it('parses nested iframes files', () => {
@@ -101,9 +101,9 @@ describe('the mhtml parser', () => {
     const results = p.parse(mhtml).rewrite().spit();
     expect(results.length).to.equal(3);
     expect(results[0].filename).to.equal('http!example.com!main.html');
-    expect(results[0].content.trim()).to.equal('<html><head></head><body><iframe src="http!example.com!one.html"></iframe>\n</body></html>');
-    expect(results[1].content.trim()).to.equal('<html><head></head><body><iframe src="http!example.com!two.html"></iframe>\n</body></html>');
-    expect(results[2].content.trim()).to.equal('<html><head></head><body>Hello World!\n</body></html>');
+    expect(results[0].content.trim()).to.equal('<html><body><iframe src="http!example.com!one.html"></iframe></body></html>');
+    expect(results[1].content.trim()).to.equal('<html><body><iframe src="http!example.com!two.html"></iframe></body></html>');
+    expect(results[2].content.trim()).to.equal('<html><body>Hello World!</body></html>');
   });
 
   it('parses nested images in iframes files', () => {
@@ -124,8 +124,8 @@ describe('the mhtml parser', () => {
     const results = p.parse(mhtml).rewrite().spit();
     expect(results.length).to.equal(3);
     expect(results[0].filename).to.equal('http!example.com!main.html');
-    expect(results[0].content.trim()).to.equal('<html><head></head><body><iframe src="http!example.com!one.html"></iframe>\n</body></html>');
-    expect(results[1].content.trim()).to.equal('<html><head></head><body><img src="http!example.com!1.jpg">\n</body></html>');
+    expect(results[0].content.trim()).to.equal('<html><body><iframe src="http!example.com!one.html"></iframe></body></html>');
+    expect(results[1].content.trim()).to.equal('<html><body><img src="http!example.com!1.jpg"></body></html>');
   });
 
   it('parses base tags', () => {
@@ -141,7 +141,7 @@ describe('the mhtml parser', () => {
     const p = new Parser();
     const results = p.parse(mhtml).rewrite().spit();
     expect(results.length).to.equal(2);
-    expect(results[0].content.trim()).to.equal('<html><head></head><body><base href="./foo/"><img src="http!example.com!foo!1.jpg">\n</body></html>');
+    expect(results[0].content.trim()).to.equal('<html><body><base href="./foo/"><img src="http!example.com!foo!1.jpg"></body></html>');
   });
 
   it('parses css files', () => {
@@ -279,4 +279,5 @@ function header() {
 }
 function boundary() {
   return '\r\n------MultipartBoundary--k9eaNRyWWhTZ1w3udCxlzhXsJDCZFc9N9slfmdZezg----\r\n'; // note this is two `-`s more
+  // technically the last boundary should have two additional --s
 }
