@@ -86,7 +86,7 @@ module.exports = {
   },
   css(cssString, resourcesMap, baseUrl) {
     const ast = csstree.parse(cssString, { parseRulePrelude: false });
-    csstree.walk(ast, (node) => {
+    csstree.walk(ast, function walker(node) {
       if (this.declaration === null || node.type !== 'Url') {
         return;
       }
