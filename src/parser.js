@@ -3,7 +3,7 @@ const filenamify = require('filenamify');
 const linkReplacer = require('./link-replacer')
 module.exports = class Parser {
   constructor(config = {}) {
-    this.config = config;
+    this.maxFileSize = config.maxFileSize || 50 * 1000 * 1000;
     this.rewriteFn = config.rewriteFn || filenamify;
   }
   parse(file) { // file is contents
@@ -17,7 +17,7 @@ module.exports = class Parser {
       throw new Error("No separator");
     }
     const separator = separatorMatch[1];
-    const parts = file.split(new RegExp(".*" + separator + ".*")).slice(1).filter(x => x.trim()).map(Parser.parsePart);
+    const parts = file.split(new RegExp(".*" + separator + ".*")).slice(1).filter(x => x.length < this.maxFileSize && x.trim()).map(Parser.parsePart);
     this.parts = parts;
     return this;
   }

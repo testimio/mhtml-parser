@@ -231,6 +231,24 @@ describe("the mhtml parser", () => {
     expect(results[1].type).to.equal("image/jpeg");
   });
 
+  it("ignores files larger than maxFileSize mime types", () => {
+    let mhtml = build([{
+      body: "body{background-image:url(http://example.com/1.jpg);}",
+      type: "text/css"
+    }, {
+      body: "a2FrYQ".repeat(1e3) + "==",
+      transferEncoding: "base64",
+      location: "http://example.com/1.jpg",
+      type: "image/jpeg"
+    }]);
+    let p = new Parser({ maxFileSize: 1e3});
+    let results = p.parse(mhtml).rewrite().spit();
+    expect(results.length).to.equal(1);
+    // didn't rewrite because of the large file removed
+    expect(results[0].content).to.equal("body{background-image:url('http://example.com/1.jpg')}");
+  });
+
+
 
   
 
