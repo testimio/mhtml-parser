@@ -1,5 +1,5 @@
 
-//mhtml parser 
+// mhtml parser
 module.exports.Parser = require('./parser');
-//mhtml reader
-module.exports.Processor = require('./processor')
+// mhtml reader
+module.exports.Processor = require('./processor');
