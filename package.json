@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "mocha src/*.test.js",
-    "lint": "eslint src/*.js"
+    "lint": "eslint src/*.js",
+    "benchmark": "node --expose-gc src/benchmark/benchmark.js "
   },
   "repository": {
     "type": "git",
