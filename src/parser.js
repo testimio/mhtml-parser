@@ -2,6 +2,10 @@ const filenamify = require('filenamify');
 const bodyDecoder = require('./decoder');
 const linkReplacer = require('./link-replacer');
 
+
+let CR = '\r'.charCodeAt(0);
+let LF = '\n'.charCodeAt(0);
+
 module.exports = class Parser {
   constructor(config = {}) {
     this.maxFileSize = config.maxFileSize || 50 * 1000 * 1000;
@@ -9,25 +13,56 @@ module.exports = class Parser {
   }
 
   parse(file) { // file is contents
-    if (Buffer.isBuffer(file)) {
-      file = file.toString();
+    if (!Buffer.isBuffer(file)) {
+      file = Buffer.from(file);
     }
-    const endOfHeaders = file.search(/\r?\n\r?\n/);
-    const header = file.slice(0, endOfHeaders);
+    const endOfHeaders = Parser.findDoubleCrLf(file);
+    const header = file.slice(0, endOfHeaders).toString();
     const separatorMatch = /boundary="(.*)"/g.exec(header);
     if (!separatorMatch) {
       throw new Error('No separator');
     }
     const separator = `--${separatorMatch[1]}`;
-    const parts = file.split(separator)
-      .slice(1)
-      .filter(x => x.length < this.maxFileSize && x.length > 10 && x.trim()).map(Parser.parsePart);
-    this.parts = parts;
+    this.parts = Parser.splitByBoundary(file, separator, endOfHeaders + 1).map(Parser.parsePart);
     return this;
+  }
+  static splitByBoundary(file, separator, fromPosition) {
+    let index;
+    let sepLen = separator.length;
+    let parts = [];
+    while((index = file.indexOf(separator, fromPosition + 1)) !== -1) {
+      if (index - fromPosition > 12) { // push non empty parts added sometimes 
+        let part = file.slice(fromPosition + sepLen, index);
+        parts.push(part);
+      }
+      fromPosition = index;
+    }
+    return parts;
+  }
+  static findDoubleCrLf(file) {
+    for(let i = 0, len = file.length; i < len; i++) {
+      if (file[i] !== CR && file[i] !== LF) {
+        continue;
+      }
+      if (file[i] === CR && file[i + 1] === LF) {
+        // \r\n
+        if (file[i + 2] === CR && file[i + 3] === LF) {
+          return i;
+        } else {
+          continue;
+        }
+      }
+      if (file[i] === CR && file[i + 1] === CR) {
+        return i;
+      }
+    }
+    return -1;
   }
 
   rewrite() {
-    const entries = this.parts.filter(part => part.location).map(part => [part.location, this.rewriteFn(part.location)]);
+    const entries = this.parts
+      .filter(part => part.location)
+      .map(part => [part.location, this.rewriteFn(part.location)]);
     const rewriteMap = new Map(entries);
     for (const part of this.parts.filter(x => x.id)) {
       rewriteMap.set(`cid:${part.id}`, this.rewriteFn(part.location || part.id));
@@ -44,17 +79,21 @@ module.exports = class Parser {
   }
 
   spit() {
-    return this.parts.map(({ location, body, id, type }) => ({
-      filename: this.rewriteFn(location || id),
-      content: body,
-      type,
+    return this.parts.map(part => ({
+      filename: this.rewriteFn(part.location || part.id),
+      content: part.body,
+      type: part.type,
     }));
   }
 
   static parsePart(part) {
-    const headerEnd = part.search(/\r?\n\r?\n/);
-    const headerPart = part.slice(0, headerEnd);
-    const body = part.slice(headerEnd + 1);
+    const headerEnd = Parser.findDoubleCrLf(part);
+    const headerPart = part.slice(0, headerEnd).toString().trim();
+    let startBody = headerEnd + 1
+    while (part[startBody] === CR || part[startBody] === LF && startBody < headerEnd + 10) { // remove some initial whitespace
+      startBody++;
+    }
+    const body = part.slice(startBody);
     const headers = new Map(headerPart.split(/\r?\n/g).map(header => header.split(': ')).map(([key, value]) => [key.toLowerCase(), value]));
     return {
       location: headers.get('content-location'),

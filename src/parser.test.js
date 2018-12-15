@@ -17,7 +17,7 @@ describe('the mhtml parser', () => {
 
   it('parses basic files with image links', () => {
     const mhtml = build([{
-      body: "<html><body><img src='http://example.com/1.jpg'></body></html>",
+      body: "<html><body><img src=\"http://example.com/1.jpg\"></body></html>",
       location: 'http://example.com/main.html',
     }, {
       body: 'a2FrYQ==',
@@ -52,7 +52,7 @@ describe('the mhtml parser', () => {
 
   it('parses basic files multiple with image links', () => {
     const mhtml = build([{
-      body: "<html><body><img src='http://example.com/1.jpg'><img src='http://example.com/1.jpg'></body></html>",
+      body: "<html><body><img src=\"http://example.com/1.jpg\"><img src=\"http://example.com/1.jpg\"></body></html>",
       location: 'http://example.com/main.html',
     }, {
       body: 'a2FrYQ==',
@@ -80,15 +80,15 @@ describe('the mhtml parser', () => {
     const results = p.parse(mhtml).rewrite().spit();
     expect(results.length).to.equal(2);
     expect(results[0].filename).to.equal('http!example.com!main.html');
-    expect(results[0].content.trim()).to.equal('<html><body><iframe src="http!example.com!frame.html"></iframe></body></html>');
+    expect(results[0].content.trim()).to.equal("<html><body><iframe src='http!example.com!frame.html'></iframe></body></html>");
   });
 
   it('parses nested iframes files', () => {
     const mhtml = build([{
-      body: "<html><body><iframe src='cid:1@blink.mhtml'></iframe></body></html>",
+      body: '<html><body><iframe src="cid:1@blink.mhtml"></iframe></body></html>',
       location: 'http://example.com/main.html',
     }, {
-      body: "<html><body><iframe src='cid:2@blink.mhtml'></iframe></body></html>",
+      body: '<html><body><iframe src="cid:2@blink.mhtml"></iframe></body></html>',
       location: 'http://example.com/one.html',
       id: '1@blink.mhtml',
     },
@@ -108,10 +108,10 @@ describe('the mhtml parser', () => {
 
   it('parses nested images in iframes files', () => {
     const mhtml = build([{
-      body: "<html><body><iframe src='cid:1@blink.mhtml'></iframe></body></html>",
+      body: '<html><body><iframe src="cid:1@blink.mhtml"></iframe></body></html>',
       location: 'http://example.com/main.html',
     }, {
-      body: "<html><body><img src='http://example.com/1.jpg'></iframe></body></html>",
+      body: '<html><body><img src="http://example.com/1.jpg"></body></html>',
       location: 'http://example.com/one.html',
       id: '1@blink.mhtml',
     }, {
@@ -130,7 +130,7 @@ describe('the mhtml parser', () => {
 
   it('parses base tags', () => {
     const mhtml = build([{
-      body: "<html><body><base href='./foo/'><img src='./1.jpg'></iframe></body></html>",
+      body: "<html><body><base href=\"./foo/\"><img src=\"./1.jpg\"></body></html>",
       location: 'http://example.com/one.html',
     }, {
       body: 'a2FrYQ==',

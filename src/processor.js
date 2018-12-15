@@ -1,6 +1,6 @@
 const fs = require('fs');
 const Parser = require('./parser');
-
+const path = require('path')
 const promised = (fn, ...args) => new Promise(function executor(resolve, reject) {
   fn.call(this, ...args, (err, data) => {
     if (err) {
@@ -15,7 +15,7 @@ module.exports = class Processor {
     const fp = promised(fs.readFile, inputFileName);
     return fp.then(data => parser.parse(data).rewrite().spit())
       .then(spitFiles => Promise.all(spitFiles.map(({ filename, content }) => {
-        if (filename.endsWith('.html')) {
+        if (path.extname(filename) === '' || path.extname(filename).length > 10) {
           filename = `${filename}.html`; // so that http-server serves stuff
         }
         return promised(fs.writeFile, `./out/${filename}`, content);
