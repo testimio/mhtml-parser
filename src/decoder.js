@@ -1,7 +1,7 @@
 module.exports = (encoding, body) => {
   switch (encoding) {
     case 'base64':
-      return Buffer.from(body, 'base64');
+      return Buffer.from(body.toString(), 'base64'); // ew on the toString, TODO figure this out
     case 'quoted-printable':
       return convertQuotedPrintable(body);
     case '8bit':

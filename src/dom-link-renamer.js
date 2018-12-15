@@ -79,10 +79,10 @@ class Generator {
 
   parseWalking() {
     while (this.lenOk()) {
-      while (this.data[this.i] !== c.ANGLE_OPEN && this.lenOk()) { // outside of tag
+      while (this.lenOk() && this.data[this.i] !== c.ANGLE_OPEN) { // outside of tag
         this.addAndProgress();
       }
-      if (this.data[this.i + 1] === c.EXCLAM_MARK) {
+      if (this.data + 1 < this.len && this.data[this.i + 1] === c.EXCLAM_MARK) {
         this.parseComment();
       }
       if (this.lenOk()) {
@@ -101,7 +101,7 @@ class Generator {
   parseTag() {
     this.addAndProgress(); // <
     if (this.current() === c.SLASH) { // closing tag
-      while (this.current() !== c.ANGLE_CLOSE && this.lenOk()) {
+      while (this.lenOk() && this.current() !== c.ANGLE_CLOSE) {
         this.addAndProgress();
       }
       if (this.current() === c.ANGLE_CLOSE) {
@@ -111,10 +111,10 @@ class Generator {
     }
     const tagName = this.parseTagName();
     this.processWhitespace();
-    while (this.current() !== c.ANGLE_CLOSE && this.lenOk()) {
+    while (this.lenOk() && this.current() !== c.ANGLE_CLOSE) {
       if (this.current() === c.SLASH && this.data[this.i + 1] === c.ANGLE_CLOSE) { // /> in tag which is a noop
         this.addAndProgress();
-        this.continue;
+        continue;
       }
       const attribute = this.parseTagAttributeName();
       if (this.current() !== c.EQUALS) {
@@ -193,12 +193,12 @@ class Generator {
 
   readTagAttributeValue(quoteCharCode) {
     if (quoteCharCode !== 0) { // escaped
-      while (this.current() !== quoteCharCode && this.lenOk()) {
+      while (this.lenOk() && this.current() !== quoteCharCode) {
         this.addAndProgress();
       }
       this.addAndProgress();
     } else { // unescaped
-      while (!isWhitespace(this.current()) && this.lenOk()) {
+      while (this.lenOk() && !isWhitespace(this.current())) {
         this.addAndProgress();
       }
     }
@@ -207,13 +207,13 @@ class Generator {
   parseTagAttributeValueWithoutProgressingReplaced(quoteCharCode) {
     const initial = this.i;
     if (quoteCharCode !== 0) { // escaped
-      while (this.current() !== quoteCharCode && this.lenOk()) {
+      while (this.lenOk() && this.current() !== quoteCharCode) {
         this.i++;
       }
       this.i++; // rread the quote
       return this.data.toString('utf8', initial, this.i - 1);
     } // unescaped
-    while (!isWhitespace(this.current()) && this.lenOk()) {
+    while (this.lenOk() && !isWhitespace(this.current())) {
       this.i++;
     }
     return this.data.toString('utf8', initial, this.i);
@@ -262,14 +262,14 @@ class Generator {
   }
 
   processWhitespace() {
-    while (isWhitespace(this.current()) && this.lenOk()) {
+    while (this.lenOk() && isWhitespace(this.current())) {
       this.addAndProgress();
     }
   }
 
   parseTagName() {
     const initial = this.i;
-    while (this.current() !== c.ANGLE_CLOSE && !isWhitespace(this.current()) && this.lenOk()) {
+    while (this.lenOk() && this.current() !== c.ANGLE_CLOSE && !isWhitespace(this.current())) {
       this.addAndProgress();
     }
     // TODO no need to allocate all these strings!
