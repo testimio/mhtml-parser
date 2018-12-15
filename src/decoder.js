@@ -29,9 +29,10 @@ const isHexDigit = code => code >= A && code <= F;
 function convertQuotedPrintable(body) {
   const len = body.length;
   const decoded = Buffer.alloc(len); // at most this big
+  const runTo = len - 3;
   let j = 0;
-  for (let i = 0; i < len; i++) {
-    if (body[i] !== EQUALS || len - i < 3) {
+  for (let i = 0; i < runTo; i++) {
+    if (body[i] !== EQUALS) {
       decoded[j++] = body[i];
       continue;
     }
@@ -74,6 +75,9 @@ function convertQuotedPrintable(body) {
     }
     const shifted = upperTranslated << 4;
     decoded[j++] = (shifted | lowerTranslated);
+  }
+  for(let i = runTo; i < len; i++) {
+    decoded[j++] = body[i];
   }
   return decoded.slice(0, j);
 }

@@ -36,9 +36,10 @@ module.exports = {
     return $.html();
   },
   css(cssString, resourcesMap, baseUrl) {
-    return cssString.toString().replace(CSS_REPLACE_RE, (whole, match ) => {
+    return cssString.toString().replace(CSS_REPLACE_RE, (whole, match) => {
       const link = new URL(match, baseUrl).toString();
       const mapped = resourcesMap.get(link) || link;
+      /* eslint-disable prefer-template */ // hot point
       return "url('" + mapped + "')";
     });
   },
@@ -64,7 +65,7 @@ module.exports = {
   },
   htmlWithCheerio(domBuffer, resourcesMap, baseUrl) {
     // slower and currently unused with Cheerio which is way more allocation happy
-    const $ = cheerio.load(domString, {
+    const $ = cheerio.load(domBuffer.toString(), {
       _useHtmlParser2: true, // cheerio 1 uses parse5 by default which is half the speed
       lowerCaseTags: false,
     });

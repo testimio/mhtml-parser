@@ -33,24 +33,24 @@ async function mark(fn, name, file, iterations = 100) {
   const newParserParallel10 = markP30.bind(null, Processor.convert);
 
   await bench("The New Parser", newParser);
-  // await bench("New Parser Parallel 30", newParserParallel10);
+  await bench("New Parser Parallel 30", newParserParallel10);
 
   const oldParserParallel10 = markP30.bind(null, convertOld);
   const oldParser = mark.bind(null, convertOld);
   
   await bench("The Old Parser", oldParser);
-  // await bench("Old Parser Parallel 30", oldParserParallel10);
+  await bench("Old Parser Parallel 30", oldParserParallel10);
 })();
 
 async function bench(name, parser) {
   console.log(name);  
-  // await parser("Example.com", "./demos/example.com.mhtml", 1000)
-  // await parser("Nested Iframe", "./demos/nested-iframe.mhtml", 100);
-  // await parser("github", "./demos/one.mhtml", 100);
+  await parser("Example.com", "./demos/example.com.mhtml", 1000)
+  await parser("Nested Iframe", "./demos/nested-iframe.mhtml", 100);
+  await parser("github", "./demos/one.mhtml", 100);
   await parser("mdn", "./demos/two.mhtml", 20);
   await parser("ynet", "./demos/ynet.mhtml", 20);
   await parser("wordpress", "./demos/wordpress.mhtml", 20);
-  //await parser("GitHub Big", "./demos/github-big.mhtml", 10);
+  await parser("GitHub Big", "./demos/github-big.mhtml", 10);
 }
 
 async function convertOld(fileName) {    

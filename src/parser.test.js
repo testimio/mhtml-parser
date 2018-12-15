@@ -179,7 +179,7 @@ describe('the mhtml parser', () => {
     const p = new Parser();
     const results = p.parse(mhtml).rewrite().spit();
     expect(results.length).to.equal(2);
-    expect(results[0].content.trim()).to.equal("body{background-image:url('http!example.com!1.jpg')}");
+    expect(results[0].content.trim()).to.equal("body{background-image:url('http!example.com!1.jpg');}");
   });
 
   it('replaces absoluite CSS links', () => {
@@ -195,7 +195,7 @@ describe('the mhtml parser', () => {
     const p = new Parser();
     const results = p.parse(mhtml).rewrite().spit();
     expect(results.length).to.equal(2);
-    expect(results[0].content.trim()).to.equal("body{background-image:url('http!example.com!1.jpg')}");
+    expect(results[0].content.trim()).to.equal("body{background-image:url('http!example.com!1.jpg');}");
   });
 
   it('replaces multiple absoluite CSS links', () => {
@@ -211,7 +211,7 @@ describe('the mhtml parser', () => {
     const p = new Parser();
     const results = p.parse(mhtml).rewrite().spit();
     expect(results.length).to.equal(2);
-    expect(results[0].content.trim()).to.equal("body{background-image:url('http!example.com!1.jpg');background:url('http!example.com!1.jpg')}");
+    expect(results[0].content.trim()).to.equal("body{background-image:url('http!example.com!1.jpg');background:url('http!example.com!1.jpg');}");
   });
 
   it('extracts mime types', () => {
@@ -245,7 +245,7 @@ describe('the mhtml parser', () => {
     const results = p.parse(mhtml).rewrite().spit();
     expect(results.length).to.equal(1);
     // didn't rewrite because of the large file removed
-    expect(results[0].content).to.equal("body{background-image:url('http://example.com/1.jpg')}");
+    expect(results[0].content.trim()).to.equal("body{background-image:url('http://example.com/1.jpg');}");
   });
 });
 

@@ -9,7 +9,7 @@ describe('link replacing', () => {
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
         'http://example.com',
       );
-      expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt')}");
+      expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt');}");
     });
     it('replaces relative CSS links', () => {
       const translated = css(
@@ -17,7 +17,7 @@ describe('link replacing', () => {
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
         'http://example.com',
       );
-      expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt')}");
+      expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt');}");
     });
 
     it('replaces unquoted CSS links', () => {
@@ -26,7 +26,7 @@ describe('link replacing', () => {
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
         'http://example.com',
       );
-      expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt')}");
+      expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt');}");
     });
     it('replaces unquoted absolute CSS links', () => {
       const translated = css(
@@ -34,7 +34,7 @@ describe('link replacing', () => {
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
         'http://example.com',
       );
-      expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt')}");
+      expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt');}");
     });
     it('replaces multiple CSS links', () => {
       const translated = css(
@@ -43,7 +43,7 @@ describe('link replacing', () => {
         'http://example.com',
       );
       expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt');"
-      + "background:url('http://testim.io/1.txt');font:url('http://testim.io/1.txt')}");
+      + "background:url('http://testim.io/1.txt');font:url('http://testim.io/1.txt');}");
     });
   });
   describe('html', () => {
