@@ -39,7 +39,7 @@ module.exports = {
     return cssString.toString().replace(CSS_REPLACE_RE, (whole, match ) => {
       const link = new URL(match, baseUrl).toString();
       const mapped = resourcesMap.get(link) || link;
-      return mapped;
+      return "url('" + mapped + "')";
     });
   },
   cssWithAst(cssString, resourcesMap, baseUrl) {
