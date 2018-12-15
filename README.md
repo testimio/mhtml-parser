@@ -106,5 +106,5 @@ Converted github in p=30. Memory(156.99202728271484)  Average time: 466.7
 Converted mdn in p=30. Memory(46.24675750732422)  Average time: 22.766666666666666
 Converted ynet in p=30. Memory(196.69261932373047)  Average time: 135.1
 Converted wordpress in p=30. Memory(183.77699279785156)  Average time: 269.4
-Converted GitHub Big in p=30. OOM (Benchmark not finished)
+Converted GitHub Big in p=30. Memory(935.9068832397461)  Average time: 15939.9
 ```
