@@ -1,6 +1,7 @@
 const fs = require('fs');
+const path = require('path');
 const Parser = require('./parser');
-const path = require('path')
+
 const promised = (fn, ...args) => new Promise(function executor(resolve, reject) {
   fn.call(this, ...args, (err, data) => {
     if (err) {

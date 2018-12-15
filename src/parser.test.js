@@ -17,7 +17,7 @@ describe('the mhtml parser', () => {
 
   it('parses basic files with image links', () => {
     const mhtml = build([{
-      body: "<html><body><img src=\"http://example.com/1.jpg\"></body></html>",
+      body: '<html><body><img src="http://example.com/1.jpg"></body></html>',
       location: 'http://example.com/main.html',
     }, {
       body: 'a2FrYQ==',
@@ -52,7 +52,7 @@ describe('the mhtml parser', () => {
 
   it('parses basic files multiple with image links', () => {
     const mhtml = build([{
-      body: "<html><body><img src=\"http://example.com/1.jpg\"><img src=\"http://example.com/1.jpg\"></body></html>",
+      body: '<html><body><img src="http://example.com/1.jpg"><img src="http://example.com/1.jpg"></body></html>',
       location: 'http://example.com/main.html',
     }, {
       body: 'a2FrYQ==',
@@ -130,7 +130,7 @@ describe('the mhtml parser', () => {
 
   it('parses base tags', () => {
     const mhtml = build([{
-      body: "<html><body><base href=\"./foo/\"><img src=\"./1.jpg\"></body></html>",
+      body: '<html><body><base href="./foo/"><img src="./1.jpg"></body></html>',
       location: 'http://example.com/one.html',
     }, {
       body: 'a2FrYQ==',
@@ -236,7 +236,7 @@ describe('the mhtml parser', () => {
       body: 'body{background-image:url(http://example.com/1.jpg);}',
       type: 'text/css',
     }, {
-      body: `${'a2FrYQ'.repeat(1e3)}==`,
+      body: `${'a2FrYQ'.repeat(1e4)}==`,
       transferEncoding: 'base64',
       location: 'http://example.com/1.jpg',
       type: 'image/jpeg',
@@ -255,7 +255,7 @@ function build(contents) {
     const headers = [
       `Content-Type: ${part.type || 'text/html'}`,
       `Content-Location: ${part.location || 'http://example.com'}`,
-      `Content-Transfer-Encoding: ${part.transferEncoding || 'quoted-printable'}`,
+      `Content-Transfer-Encoding: ${part.transferEncoding || 'binary'}`,
     ];
     if (part.id) {
       headers.push(`Content-ID: <${part.id}>`);

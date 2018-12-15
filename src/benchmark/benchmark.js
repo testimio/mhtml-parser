@@ -1,45 +1,44 @@
-const Processor = require('../processor');
-const MHTMLParser = require('./mhtmlParser'); // old code
 const fs = require('fs').promises;
 const filenamify = require('filenamify');
+const Processor = require('../processor');
+const MHTMLParser = require('./mhtmlParser'); // old code
 
+/* eslint-disable */
 async function markP30(fn, name, file) {
   global.gc();
-  let start = Date.now();
+  const start = Date.now();
   await Promise.all(Array(30).fill().map(() => fn(file)));
   const used = process.memoryUsage().heapUsed / 1024 / 1024;
 
   console.log(`Converted ${name} in p=30.`,
-    'Memory(' + used + ')', 
-    ' Average time: ' + (Date.now() - start) / 30
-  );
+    `Memory(${used})`,
+    ` Average time: ${(Date.now() - start) / 30}`);
 }
 async function mark(fn, name, file, iterations = 100) {
   global.gc();
-  let start = Date.now();
+  const start = Date.now();
   for (let i = 0; i < iterations; i++) {
     await fn(file);
   }
   const used = process.memoryUsage().heapUsed / 1024 / 1024;
 
   console.log(`Converted ${name} ${iterations} times.`,
-    'Memory(' + used +")",
-    'Average time: ' +     (Date.now() - start) / iterations
-  );
+    `Memory(${used})`,
+    `Average time: ${(Date.now() - start) / iterations}`);
 }
 
 /* eslint-disable */
 (async () => {
-  // const newParser = mark.bind(null, Processor.convert);
+  const newParser = mark.bind(null, Processor.convert);
   const newParserParallel10 = markP30.bind(null, Processor.convert);
 
   await bench("The New Parser", newParser);
-  // await bench("New Parser Parallel 30", newParserParallel10);
+  await bench("New Parser Parallel 30", newParserParallel10);
 
-  // const oldParserParallel10 = markP30.bind(null, convertOld);
-  // const oldParser = mark.bind(null, convertOld);
+  const oldParserParallel10 = markP30.bind(null, convertOld);
+  const oldParser = mark.bind(null, convertOld);
   
-  // await bench("The Old Parser", oldParser);
+  await bench("The Old Parser", oldParser);
   await bench("Old Parser Parallel 30", oldParserParallel10);
 })();
 

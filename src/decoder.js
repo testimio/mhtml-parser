@@ -3,7 +3,7 @@ module.exports = (encoding, body) => {
     case 'base64':
       return Buffer.from(body, 'base64');
     case 'quoted-printable':
-      return convertQuotedPrintable(body)
+      return convertQuotedPrintable(body);
     case '8bit':
     case '7bit':
     case 'binary':
@@ -23,29 +23,30 @@ const F = 'F'.charCodeAt(0);
 const D = 'D'.charCodeAt(0);
 const THREE = '3'.charCodeAt(0);
 
-const isAsciiNum = code => code >= ZERO & code <= NINE;
+const isAsciiNum = code => code >= ZERO && code <= NINE;
 const isHexDigit = code => code >= A && code <= F;
 
 function convertQuotedPrintable(body) {
   const len = body.length;
-  let decoded = Buffer.alloc(len); // at most this big
+  const decoded = Buffer.alloc(len); // at most this big
   let j = 0;
-  for(let i = 0; i < len; i++) {
+  for (let i = 0; i < len; i++) {
     if (body[i] !== EQUALS || len - i < 3) {
       decoded[j++] = body[i];
       continue;
     }
     // We are dealing with a '=xx' sequence.
-    let upper = body[++i];
-    let lower = body[++i];
+    const upper = body[++i];
+    const lower = body[++i];
 
     // fast path for =3D
     if (upper === THREE && lower === D) {
       decoded[j++] = EQUALS;
       continue;
     }
-    let upperTranslated = 1000, lowerTranslated = 1000;
-    if (upper == CR && lower == LF) {
+    let upperTranslated = 1000;
+    let lowerTranslated = 1000;
+    if (upper === CR && lower === LF) {
       continue;
     }
     if (isAsciiNum(upper)) {
@@ -71,8 +72,8 @@ function convertQuotedPrintable(body) {
       decoded[j++] = upper;
       decoded[j++] = lower;
     }
-
-    decoded[j++] = (upperTranslated << 4 | lowerTranslated);
+    const shifted = upperTranslated << 4;
+    decoded[j++] = (shifted | lowerTranslated);
   }
   return decoded.slice(0, j);
 }
