@@ -167,6 +167,9 @@ class Generator {
   }
 
   getLink(attribute, fromHtml) {
+    if (fromHtml.charAt(0) === '#') { // internal hash
+      return fromHtml;
+    }
     let lastSeenHash = '';
     const resolveLink = link => {
       let url = new URL(link, this.baseUrl);
