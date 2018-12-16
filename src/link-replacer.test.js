@@ -103,13 +103,13 @@ describe('link replacing', () => {
       expect(translated).to.equal(wrap`<base href="./foo/"> <img src="http://testim.io/1.txt">`);
     });
 
-    it.skip('replaces xlink:href in svg tags', () => {
+    it('replaces xlink:href in svg tags', () => {
       const translated = html(
         wrap`<svg><feImage xlink:href="http://example.com/1.txt"/></svg>`,
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
         'http://example.com',
       );
-      expect(translated).to.equal(wrap`<svg><feImage href="http://testim.io/1.txt"/></svg>`);
+      expect(translated).to.equal(wrap`<svg><feImage xlink:href="http://testim.io/1.txt"/></svg>`);
     });
 
     it('replaces href in svg tags', () => {

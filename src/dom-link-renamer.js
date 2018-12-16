@@ -3,6 +3,7 @@ const attrs = {
   SRC: 1,
   SRCSET: 2,
   HREF: 3,
+  XLINKHREF: 4,
   DATA: 6,
   CODE: 7,
   OTHER: 10,
@@ -10,14 +11,22 @@ const attrs = {
 
 
 function generateIs(str) {
-  const body = str.split('')
-    .map(s => `(${s} === ${s.toLowerCase().charCodeAt(0)} || ${s} === ${s.toUpperCase().charCodeAt(0)})`)
+  str = str.split('').map(x => x.replace(':', 'COLON').replace("-", "DASH"));
+  const mapBack = s => {
+    if (s === 'COLON') return ':';
+    if (s === 'DASH') return '-';
+    return s;
+  }
+  const body = str
+    .map(s => `(${s} === ${mapBack(s).toLowerCase().charCodeAt(0)} || ${s} === ${mapBack(s).toUpperCase().charCodeAt(0)})`)
     .join(' && ');
   /* eslint-disable */
   return Function(...str, `return ${body}`);
 }
 const isSrc = generateIs('src');
 const isSrcSet = generateIs('srcset');
+const isXlinkHref = generateIs('xlink:href');
+//const isHttpEquiv = generateIs('http-equiv'); // not actually relevant for what we do
 const isHref = generateIs('href');
 const isData = generateIs('data');
 const isCode = generateIs('code');
@@ -176,6 +185,9 @@ class Generator {
     if (attribute === attrs.CODE) {
       return tagName === 'applet';
     }
+    if (attribute === attrs.XLINKHREF) {
+      return tagName === 'feimage' || tagName === 'image' || tagName === 'use';
+    }
     return false;
   }
 
@@ -252,11 +264,26 @@ class Generator {
     }
     if (len === 6) {
       if (isSrcSet(
-        data[initial], data[initial + 1], data[initial + 2], data[initial + 3], data[initial + 4], data[initial + 5],
+        data[initial], data[initial + 1],data[initial + 2], data[initial + 3], data[initial + 4], data[initial + 5],
       )) {
         return attrs.SRCSET;
       }
       return attrs.OTHER;
+    }
+    if (len === 10) {
+      if (isXlinkHref(
+        data[initial], 
+        data[initial + 1],
+        data[initial + 2],
+        data[initial + 3],
+        data[initial + 4],
+        data[initial + 5],
+        data[initial + 6],
+        data[initial + 7],
+        data[initial + 8],
+        data[initial + 9])) {
+        return attrs.XLINKHREF;
+      }
     }
     return attrs.OTHER;
   }
