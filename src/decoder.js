@@ -69,14 +69,14 @@ function convertQuotedPrintable(body) {
       lowerTranslated = lower - A + 10;
     }
     if (lowerTranslated === 1000) { // invalid seq
-      decoded[j++] = '=';
+      decoded[j++] = EQUALS;
       decoded[j++] = upper;
       decoded[j++] = lower;
     }
     const shifted = upperTranslated << 4;
     decoded[j++] = (shifted | lowerTranslated);
   }
-  for(let i = runTo; i < len; i++) {
+  for (let i = runTo; i < len; i++) {
     decoded[j++] = body[i];
   }
   return decoded.slice(0, j);
