@@ -64,6 +64,7 @@ const c = {
   t: 't'.charCodeAt(0),
   EQUALS: '='.charCodeAt(0),
   SLASH: '/'.charCodeAt(0),
+  DASH: '-'.charCodeAt(0)
 };
 
 class Generator {
@@ -96,6 +97,7 @@ class Generator {
       }
       if (this.data[this.i + 1] === c.EXCLAM_MARK) {
         this.parseComment();
+        continue;
       }
       if (this.lenOk()) {
         this.parseTag();
@@ -104,10 +106,12 @@ class Generator {
   }
 
   parseComment() {
-    while ((this.current() !== c.EXCLAM_MARK && this.data[this.i + 1] !== c.ANGLE_CLOSE) && this.lenOk()) {
+    while (!(this.current() === c.DASH && this.data[this.i + 1] === c.ANGLE_CLOSE) && this.lenOk()) {
       this.addAndProgress();
     }
-    this.addAndProgress();
+    this.addAndProgress();// -
+    this.addAndProgress();// >
+
   }
 
   parseTag() {
@@ -142,12 +146,11 @@ class Generator {
       }
       const fromHtml = this.parseTagAttributeValueWithoutProgressingReplaced(quoteType);
       let value = this.getLink(attribute, fromHtml);
-
       if (tagName === 'base') { // this is in fact the base tag!
         this.baseUrl = new URL(fromHtml, this.baseUrl);
         // TODO deal with the case the base tag appears _AFTER_ links, we need to "go back" and replace all links in this case
         //     which is very lame
-        value = fromHtml;
+        value = ''; // write empty base
       }
       // console.log("tag", tagName, "attr", attribute, fromHtml, "->", value);
       for (let k = 0; k < value.length; k++) {
@@ -164,12 +167,22 @@ class Generator {
   }
 
   getLink(attribute, fromHtml) {
-    const resolveLink = link => new URL(link, this.baseUrl).toString();
+    let lastSeenHash = '';
+    const resolveLink = link => {
+      let url = new URL(link, this.baseUrl);
+      lastSeenHash = url.hash;
+      url.hash = '';
+      return url.toString();
+    };
     if (attribute === attrs.SRCSET) {
       return fromHtml.split(' ').map(resolveLink).map(part => this.mapping.get(part) || part).join(' ');
     }
     const link = resolveLink(fromHtml);
-    return this.mapping.get(link) || link;
+    let result = this.mapping.get(link) || link;
+    if (lastSeenHash) { // srcset can't have hash
+      result += lastSeenHash
+    }
+    return result;
   }
 
   isInterestingTagAttrName(tagName, attribute) {

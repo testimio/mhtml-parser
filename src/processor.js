@@ -15,11 +15,12 @@ module.exports = class Processor {
     const parser = new Parser({});
     const fp = promised(fs.readFile, inputFileName);
     return fp.then(data => parser.parse(data).rewrite().spit())
-      .then(spitFiles => Promise.all(spitFiles.map(({ filename, content }) => {
-        if (path.extname(filename) === '' || path.extname(filename).length > 10) {
-          filename = `${filename}.html`; // so that http-server serves stuff
+      .then(spitFiles => Promise.all(spitFiles.map(({ filename, content }, index) => {
+        let r = Promise.resolve();
+        if (index === 0 && path.extname(filename) !== '.html') {
+          r = r.then(() => promised(fs.writeFile, `./out/${filename}.html`, content));
         }
-        return promised(fs.writeFile, `./out/${filename}`, content);
+        return r.then(() => promised(fs.writeFile, `./out/${filename}`, content));
       })));
   }
 };

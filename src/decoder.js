@@ -50,6 +50,10 @@ function convertQuotedPrintable(body) {
     if (upper === CR && lower === LF) {
       continue;
     }
+    if (upper === LF) { // windows chrome does invalid encoding with \n and not \r\n
+      i--;
+      continue;
+    }
     if (isAsciiNum(upper)) {
       upperTranslated = upper - ZERO;
     }
