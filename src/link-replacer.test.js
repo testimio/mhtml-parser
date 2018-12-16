@@ -7,7 +7,7 @@ describe('link replacing', () => {
       const translated = css(
         "body{background-image:url('http://example.com/1.txt');}",
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
-        'http://example.com',
+        'http://example.com'
       );
       expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt');}");
     });
@@ -15,7 +15,7 @@ describe('link replacing', () => {
       const translated = css(
         "body{background-image:url('./1.txt');}",
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
-        'http://example.com',
+        'http://example.com'
       );
       expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt');}");
     });
@@ -24,7 +24,7 @@ describe('link replacing', () => {
       const translated = css(
         'body{background-image:url(./1.txt);}',
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
-        'http://example.com',
+        'http://example.com'
       );
       expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt');}");
     });
@@ -32,7 +32,7 @@ describe('link replacing', () => {
       const translated = css(
         'body{background-image:url(./1.txt);}',
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
-        'http://example.com',
+        'http://example.com'
       );
       expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt');}");
     });
@@ -40,7 +40,7 @@ describe('link replacing', () => {
       const translated = css(
         'body{background-image:url(./1.txt);background:url(./1.txt);font:url(./1.txt);}',
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
-        'http://example.com',
+        'http://example.com'
       );
       expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt');"
       + "background:url('http://testim.io/1.txt');font:url('http://testim.io/1.txt');}");
@@ -53,7 +53,7 @@ describe('link replacing', () => {
       const translated = html(
         wrap`<img src='http://example.com/1.txt'>`,
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
-        'http://example.com',
+        'http://example.com'
       );
       expect(translated).to.equal(wrap`<img src='http://testim.io/1.txt'>`);
     });
@@ -62,7 +62,7 @@ describe('link replacing', () => {
       const translated = html(
         wrap`<img src='./1.txt'>`,
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
-        'http://example.com',
+        'http://example.com'
       );
       expect(translated).to.equal(wrap`<img src='http://testim.io/1.txt'>`);
     });
@@ -71,7 +71,7 @@ describe('link replacing', () => {
       const translated = html(
         wrap`<img srcset="./1.txt">`,
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
-        'http://example.com',
+        'http://example.com'
       );
       expect(translated).to.equal(wrap`<img srcset="http://testim.io/1.txt">`);
     });
@@ -80,7 +80,7 @@ describe('link replacing', () => {
       const translated = html(
         wrap`<link rel="stylesheet" href="http://example.com/1.txt">`,
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
-        'http://example.com',
+        'http://example.com'
       );
       expect(translated).to.equal(wrap`<link rel="stylesheet" href="http://testim.io/1.txt">`);
     });
@@ -89,7 +89,7 @@ describe('link replacing', () => {
       const translated = html(
         wrap`<link rel="stylesheet" href="./1.txt">`,
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
-        'http://example.com',
+        'http://example.com'
       );
       expect(translated).to.equal(wrap`<link rel="stylesheet" href="http://testim.io/1.txt">`);
     });
@@ -98,7 +98,7 @@ describe('link replacing', () => {
       const translated = html(
         wrap`<base href="./foo/"> <img src="./1.txt">`,
         new Map([['http://example.com/foo/1.txt', 'http://testim.io/1.txt']]),
-        'http://example.com',
+        'http://example.com'
       );
       expect(translated).to.equal(wrap`<base href="./foo/"> <img src="http://testim.io/1.txt">`);
     });
@@ -107,7 +107,7 @@ describe('link replacing', () => {
       const translated = html(
         wrap`<svg><feImage xlink:href="http://example.com/1.txt"/></svg>`,
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
-        'http://example.com',
+        'http://example.com'
       );
       expect(translated).to.equal(wrap`<svg><feImage xlink:href="http://testim.io/1.txt"/></svg>`);
     });
@@ -116,7 +116,7 @@ describe('link replacing', () => {
       const translated = html(
         wrap`<svg><feImage href="http://example.com/1.txt"/></svg>`,
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
-        'http://example.com',
+        'http://example.com'
       );
       expect(translated).to.equal(wrap`<svg><feImage href="http://testim.io/1.txt"/></svg>`);
     });
@@ -125,7 +125,7 @@ describe('link replacing', () => {
       const translated = html(
         wrap`<meta http-equiv="refresh" content="0;URL='http://example.com/1.txt'" />`,
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
-        'http://example.com',
+        'http://example.com'
       );
       expect(translated).to.equal(wrap`<meta http-equiv="refresh" content="0; url=http://testim.io/1.txt">`);
     });
@@ -134,7 +134,7 @@ describe('link replacing', () => {
       const translated = html(
         wrap`<applet code="http://example.com/1.txt"></applet>`,
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
-        'http://example.com',
+        'http://example.com'
       );
       expect(translated).to.equal(wrap`<applet code="http://testim.io/1.txt"></applet>`);
     });
@@ -144,7 +144,7 @@ describe('link replacing', () => {
       const translated = svg(
         '<svg><feImage href="http://example.com/1.txt"/></svg>',
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
-        'http://example.com',
+        'http://example.com'
       );
       expect(translated).to.equal('<svg><feImage href="http://testim.io/1.txt"/></svg>');
     });
