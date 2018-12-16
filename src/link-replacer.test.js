@@ -100,7 +100,7 @@ describe('link replacing', () => {
         new Map([['http://example.com/foo/1.txt', 'http://testim.io/1.txt']]),
         'http://example.com'
       );
-      expect(translated).to.equal(wrap`<base href="./foo/"> <img src="http://testim.io/1.txt">`);
+      expect(translated).to.equal(wrap`<base href=""> <img src="http://testim.io/1.txt">`);
     });
 
     it('replaces xlink:href in svg tags', () => {

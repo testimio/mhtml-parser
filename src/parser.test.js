@@ -141,7 +141,7 @@ describe('the mhtml parser', () => {
     const p = new Parser();
     const results = p.parse(mhtml).rewrite().spit();
     expect(results.length).to.equal(2);
-    expect(results[0].content.trim()).to.equal('<html><body><base href="./foo/"><img src="http!example.com!foo!1.jpg"></body></html>');
+    expect(results[0].content.trim()).to.equal('<html><body><base href=""><img src="http!example.com!foo!1.jpg"></body></html>');
   });
 
   it('parses css files', () => {
