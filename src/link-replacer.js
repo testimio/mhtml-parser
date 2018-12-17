@@ -40,8 +40,8 @@ module.exports = {
     let start = "url('";
     let end = "')";
     if (inAttribute) {
-      start = "url(&quot;";
-      end = "&quot;)";
+      start = 'url(&quot;';
+      end = '&quot;)';
     }
     return cssString.toString().replace(CSS_REPLACE_RE, (whole, match) => {
       if (match.charAt(0) === '/' && match.charAt(1) === '/') { // protocol agnostic URL
