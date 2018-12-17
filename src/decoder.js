@@ -64,6 +64,7 @@ function convertQuotedPrintable(body) {
       decoded[j++] = EQUALS;
       decoded[j++] = upper;
       decoded[j++] = lower;
+      continue;
     }
 
     if (isAsciiNum(lower)) {
@@ -76,6 +77,7 @@ function convertQuotedPrintable(body) {
       decoded[j++] = EQUALS;
       decoded[j++] = upper;
       decoded[j++] = lower;
+      continue;
     }
     const shifted = upperTranslated << 4;
     decoded[j++] = (shifted | lowerTranslated);

@@ -62,3 +62,4 @@ typings/
 # project output
 out/
 .DS_Store
+coverage/

@@ -112,23 +112,23 @@ module.exports = {
       el.attr('href', mapped);
     });
 
-    // old and deprecated stuff
+    // old and deprecated stuff, skipped
 
-    $('meta[http-equiv=refresh]').each((i, el) => {
-      el = $(el);
-      const re = /(\d)+; ?URL='?([^']*)'?/gi;
-      const [, seconds, url] = re.exec(el.attr('content'));
-      const link = new URL(url, baseUrl).toString();
-      const mapped = resourcesMap.get(link) || link;
-      el.attr('content', `${seconds}; url=${mapped}`);
-    });
+    // $('meta[http-equiv=refresh]').each((i, el) => {
+    //   el = $(el);
+    //   const re = /(\d)+; ?URL='?([^']*)'?/gi;
+    //   const [, seconds, url] = re.exec(el.attr('content'));
+    //   const link = new URL(url, baseUrl).toString();
+    //   const mapped = resourcesMap.get(link) || link;
+    //   el.attr('content', `${seconds}; url=${mapped}`);
+    // });
 
-    $('object[data]').each((i, el) => {
-      el = $(el);
-      const link = new URL(el.attr('data'), baseUrl).toString();
-      const mapped = resourcesMap.get(link) || link;
-      el.attr('data', mapped);
-    });
+    // $('object[data]').each((i, el) => {
+    //   el = $(el);
+    //   const link = new URL(el.attr('data'), baseUrl).toString();
+    //   const mapped = resourcesMap.get(link) || link;
+    //   el.attr('data', mapped);
+    // });
 
     $('applet[code]').each((i, el) => {
       el = $(el);

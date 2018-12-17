@@ -1,10 +1,10 @@
 {
   "name": "fast-mhtml",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Parses mhtml files",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha src/*.test.js",
+    "test": "nyc --reporter=html mocha src/*.test.js",
     "lint": "eslint src/*.js",
     "benchmark": "node --expose-gc src/benchmark/benchmark.js",
     "serve": "node src/index"
@@ -37,7 +37,8 @@
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.14.0",
     "husky": "^1.2.0",
-    "mocha": "5.2.0"
+    "mocha": "5.2.0",
+    "nyc": "^13.1.0"
   },
   "husky": {
     "hooks": {

@@ -14,11 +14,9 @@ const attrs = {
 };
 
 function generateIs(str) {
-  str = str.split('').map(x => x.replace(':', 'COLON').replace('-', 'DASH').replace('<', 'ANGLE'));
+  str = str.split('').map(x => x.replace(':', 'COLON'));
   const mapBack = (s) => {
     if (s === 'COLON') return ':';
-    if (s === 'DASH') return '-';
-    if (s === 'ANGLE') return '<';
     return s;
   };
   const body = str
@@ -30,7 +28,6 @@ function generateIs(str) {
 const isSrc = generateIs('src');
 const isSrcSet = generateIs('srcset');
 const isXlinkHref = generateIs('xlink:href');
-//const isHttpEquiv = generateIs('http-equiv'); // not actually relevant for what we do
 const isHref = generateIs('href');
 const isData = generateIs('data');
 const isCode = generateIs('code');
@@ -371,6 +368,8 @@ class Generator {
     this.i++;
     this.j++;
   }
+  
+  /* istanbul ignore next */
   dumpIf(fn = () => true, logger = false) {
     let next100 = this.data.slice(this.i, this.i + 100).toString();
     if (fn(next100)) {
