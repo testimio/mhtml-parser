@@ -5,6 +5,6 @@ module.exports.Parser = require('./parser');
 module.exports.Processor = require('./processor');
 
 if (require.main === module) {
- // serverm ode
- module.exports.Processor.serve(process.env.PORT || 8080);  
+  // server mode
+  module.exports.Processor.serve(process.env.PORT || 8080);
 }
