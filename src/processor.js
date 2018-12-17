@@ -25,7 +25,7 @@ module.exports = class Processor {
       })));
   }
 
-  static serve(inputFileName, port = 8080) {
+  static serve(port = 8080) {
     const app = express();
     const fileCache = new Map();
     app.get('/:path', (req, res) => {

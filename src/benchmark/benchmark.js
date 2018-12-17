@@ -1,8 +1,4 @@
-const filenamify = require('filenamify');
 const co = require('bluebird').coroutine;
-const { promisifyAll } = require('bluebird');
-const fs = promisifyAll(require('fs'));
-const MHTMLParser = require('./mhtmlParser'); // old code
 const Processor = require('../processor');
 
 /* eslint-disable */

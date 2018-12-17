@@ -13,7 +13,6 @@ const attrs = {
   OTHER: 10,
 };
 
-
 function generateIs(str) {
   str = str.split('').map(x => x.replace(':', 'COLON').replace('-', 'DASH').replace('<', 'ANGLE'));
   const mapBack = (s) => {
@@ -69,7 +68,6 @@ const c = {
   SLASH: '/'.charCodeAt(0),
   DASH: '-'.charCodeAt(0)
 };
-
 class Generator {
   constructor(data, mapping, baseUrl) {
     this.reset(data, mapping, baseUrl);
@@ -399,14 +397,5 @@ function isWhitespace(charCode) {
       return false;
   }
 }
-
-// const data = Buffer.from("<html><body><img baba src='foo.html'></body></html>");
-// const mapping = new Map([
-//   ["foo.html", "http://testim.io/bar.html"]])
-// const g = new Generator(data, mapping);
-
-// g.parse();
-
-// console.log(g.result().toString());
 
 module.exports = Generator;

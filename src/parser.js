@@ -2,10 +2,8 @@ const filenamify = require('filenamify');
 const bodyDecoder = require('./decoder');
 const linkReplacer = require('./link-replacer');
 
-
 const CR = '\r'.charCodeAt(0);
 const LF = '\n'.charCodeAt(0);
-
 module.exports = class Parser {
   constructor(config = {}) {
     this.maxFileSize = config.maxFileSize || 50 * 1000 * 1000;
