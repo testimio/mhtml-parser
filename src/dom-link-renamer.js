@@ -145,7 +145,7 @@ class Generator {
       const fromHtml = this.parseTagAttributeValueWithoutProgressingReplaced(quoteType);
       let value = '';
       if (attribute === attrs.STYLE) {
-        value = this.cssProcessor ? this.cssProcessor(fromHtml, this.mapping, this.baseUrl) : fromHtml;
+        value = this.cssProcessor ? this.cssProcessor(fromHtml, this.mapping, this.baseUrl, true) : fromHtml;
       } else if (tagName === 'base') {
         this.baseUrl = new URL(fromHtml, this.baseUrl);
         // TODO deal with the case the base tag appears _AFTER_ links, we need to "go back" and replace all links in this case
@@ -243,6 +243,7 @@ class Generator {
     if (attribute === attrs.STYLE) {
       return true;
     }
+    /* istanbul ignore next unreachable */
     return false;
   }
 
@@ -265,7 +266,7 @@ class Generator {
       }
       this.addAndProgress();
     } else { // unescaped
-      while (!isWhitespace(this.current()) && this.lenOk()) {
+      while (!isWhitespace(this.current()) && !(this.current() === c.ANGLE_CLOSE) && this.lenOk()) {
         this.addAndProgress();
       }
     }
@@ -277,10 +278,10 @@ class Generator {
       while (this.current() !== quoteCharCode && this.lenOk()) {
         this.i++;
       }
-      this.i++; // rread the quote
+      this.i++; // read the quote
       return this.data.toString('utf8', initial, this.i - 1);
     } // unescaped
-    while (!isWhitespace(this.current()) && this.lenOk()) {
+    while (!isWhitespace(this.current()) && (this.current() !== c.ANGLE_CLOSE) && this.lenOk()) {
       this.i++;
     }
     return this.data.toString('utf8', initial, this.i);
@@ -312,7 +313,7 @@ class Generator {
         return attrs.CODE;
       }
       if (isData(data[initial], data[initial + 1], data[initial + 2], data[initial + 3])) {
-        return attrs.Data;
+        return attrs.DATA;
       }
       return attrs.OTHER;
     }

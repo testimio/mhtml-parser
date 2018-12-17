@@ -36,7 +36,13 @@ module.exports = {
     });
     return $.html();
   },
-  css(cssString, resourcesMap, baseUrl) {
+  css(cssString, resourcesMap, baseUrl, inAttribute = false) {
+    let start = "url('";
+    let end = "')";
+    if (inAttribute) {
+      start = "url(&quot;";
+      end = "&quot;)";
+    }
     return cssString.toString().replace(CSS_REPLACE_RE, (whole, match) => {
       if (match.charAt(0) === '/' && match.charAt(1) === '/') { // protocol agnostic URL
         match = `http:${match}`;
@@ -44,7 +50,7 @@ module.exports = {
       const link = new URL(match, baseUrl).toString();
       const mapped = resourcesMap.get(link) || link;
       /* eslint-disable prefer-template */ // hot point
-      return "url('" + mapped + "')";
+      return start + mapped + end;
     });
   },
   cssWithAst(cssString, resourcesMap, baseUrl) {

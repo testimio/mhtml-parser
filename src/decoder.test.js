@@ -43,6 +43,12 @@ describe('decoding', () => {
     ).to.equal('Hello f World');
   });
 
+  it('decodes quoted printable on invalid lower sequences', () => {
+    expect(
+      decoder('quoted-printable',
+        Buffer.from('Hello =6K World')).toString()
+    ).to.equal('Hello =6K World');
+  });
 
   it('decodes ignored encodings', () => {
     expect(decoder('7bit', Buffer.from('Hello')).toString()).to.equal('Hello');

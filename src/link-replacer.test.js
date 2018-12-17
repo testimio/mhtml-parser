@@ -127,6 +127,34 @@ describe('link replacing', () => {
       expect(translated).to.equal(wrap`<img src='http://testim.io/1.txt'>`);
     });
 
+    it('replaces unescaped img src tags', () => {
+      const translated = html(
+        wrap`<img src=http://example.com/1.txt >`,
+        new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
+        'http://example.com'
+      );
+      expect(translated).to.equal(wrap`<img src=http://testim.io/1.txt >`);
+    });
+
+    it('replaces unescaped img src tags without space', () => {
+      const translated = html(
+        wrap`<img src=http://example.com/1.txt>`,
+        new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
+        'http://example.com'
+      );
+      expect(translated).to.equal(wrap`<img src=http://testim.io/1.txt>`);
+    });
+
+    it('ignores uninteresting unescaped attributes ', () => {
+      const translated = html(
+        wrap`<img kaka data foo=bar src=http://example.com/1.txt>`,
+        new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
+        'http://example.com'
+      );
+      expect(translated).to.equal(wrap`<img kaka data foo=bar src=http://testim.io/1.txt>`);
+    });
+
+
     it('ignores hash in urls', () => {
       const translated = html(
         wrap`<img src='http://example.com/1.txt#foo'>`,
@@ -155,12 +183,12 @@ describe('link replacing', () => {
     });
 
     it('replaces CSS style links', () => {
-      const translated = css(
-        "<img style='background-image:url('http://example.com/1.txt');'>",
+      const translated = html(
+        "<img blabl style='background-image:url(http://example.com/1.txt);'>",
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
         'http://example.com'
       );
-      expect(translated).to.equal("<img style='background-image:url('http://testim.io/1.txt');'>");
+      expect(translated).to.equal("<img blabl style='background-image:url(&quot;http://testim.io/1.txt&quot;);'>");
     });
 
     it('replaces inline CSS links links', () => {
@@ -192,11 +220,11 @@ describe('link replacing', () => {
 
     it('replaces img srcset tags', () => {
       const translated = html(
-        wrap`<img srcset="./1.txt">`,
+        wrap`<img\tblabla srcset="./1.txt">`,
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
         'http://example.com'
       );
-      expect(translated).to.equal(wrap`<img srcset="http://testim.io/1.txt">`);
+      expect(translated).to.equal(wrap`<img\tblabla srcset="http://testim.io/1.txt">`);
     });
 
     it('replaces link href values', () => {
@@ -233,6 +261,24 @@ describe('link replacing', () => {
         'http://example.com'
       );
       expect(translated).to.equal(wrap`<svg><feImage xlink:href="http://testim.io/1.txt"/></svg>`);
+    });
+
+    it('replaces image in svg tags', () => {
+      const translated = html(
+        wrap`<svg><image xlink:href="http://example.com/1.txt"/></svg>`,
+        new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
+        'http://example.com'
+      );
+      expect(translated).to.equal(wrap`<svg><image xlink:href="http://testim.io/1.txt"/></svg>`);
+    });
+
+    it('replaces use in svg tags', () => {
+      const translated = html(
+        wrap`<svg><use xlink:href="http://example.com/1.txt"/></svg>`,
+        new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
+        'http://example.com'
+      );
+      expect(translated).to.equal(wrap`<svg><use xlink:href="http://testim.io/1.txt"/></svg>`);
     });
 
     it('replaces href in svg tags', () => {

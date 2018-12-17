@@ -15,6 +15,12 @@ describe('the mhtml parser', () => {
     expect(results[0].content.trim()).to.equal('<html><body>Hello World!</body></html>');
   });
 
+  it('throws if no boundary', () => {
+    const mhtml ='<html><body>Hello World!</body></html>';
+    const p = new Parser();
+    expect(()=> p.parse(mhtml).rewrite().spit()).to.throw();
+  });
+
   it('parses basic files with image links', () => {
     const mhtml = build([{
       body: '<html><body><img src="http://example.com/1.jpg"></body></html>',
