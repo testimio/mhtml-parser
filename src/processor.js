@@ -43,9 +43,10 @@ module.exports = class Processor {
           res.end();
         }).catch((err) => {
           res.status(500);
-          res.send(`Error${err}<br />${err.stack.replace(/\n/, '<br />')}`);
+          res.send(`Error: ${err}<br />${err.stack.replace(/\n/, '<br />')}`);
           res.end();
         });
+        return;
       }
       const result = fileCache.get(file);
       if (!result) {
