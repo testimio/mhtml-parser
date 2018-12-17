@@ -1,5 +1,5 @@
 {
-  "name": "mhtml-parser",
+  "name": "fast-mhtml",
   "version": "1.1.0",
   "description": "Parses mhtml files",
   "main": "src/index.js",
@@ -28,7 +28,7 @@
     "bluebird": "3.5.2",
     "cheerio": "1.0.0-rc.2",
     "css-tree": "1.0.0-alpha.29",
-    "express": "^4.16.4",
+    "express": "4.16.4",
     "filenamify": "2.1.0"
   },
   "devDependencies": {
