@@ -9,15 +9,17 @@ const attrs = {
   XLINKHREF: 4,
   DATA: 6,
   CODE: 7,
+  STYLE: 8,
   OTHER: 10,
 };
 
 
 function generateIs(str) {
-  str = str.split('').map(x => x.replace(':', 'COLON').replace('-', 'DASH'));
+  str = str.split('').map(x => x.replace(':', 'COLON').replace('-', 'DASH').replace('<', 'ANGLE'));
   const mapBack = (s) => {
     if (s === 'COLON') return ':';
     if (s === 'DASH') return '-';
+    if (s === 'ANGLE') return '<';
     return s;
   };
   const body = str
@@ -33,6 +35,7 @@ const isXlinkHref = generateIs('xlink:href');
 const isHref = generateIs('href');
 const isData = generateIs('data');
 const isCode = generateIs('code');
+const isStyle = generateIs('style');
 
 const c = {
   ANGLE_OPEN: '<'.charCodeAt(0),
@@ -95,7 +98,7 @@ class Generator {
       while (this.lenOk() && this.data[this.i] !== c.ANGLE_OPEN) { // outside of tag
         this.addAndProgress();
       }
-      if (this.data[this.i + 1] === c.EXCLAM_MARK) {
+      if (this.data[this.i + 1] === c.EXCLAM_MARK && this.data[this.i + 2] === c.DASH) {
         this.parseComment();
         continue;
       }
@@ -145,12 +148,16 @@ class Generator {
         continue;
       }
       const fromHtml = this.parseTagAttributeValueWithoutProgressingReplaced(quoteType);
-      let value = this.getLink(attribute, fromHtml);
-      if (tagName === 'base') { // this is in fact the base tag!
+      let value = '';
+      if (attribute === attrs.STYLE) {
+        value = this.cssProcessor ? this.cssProcessor(fromHtml, this.mapping, this.baseUrl) : fromHtml;
+      } else if (tagName === 'base') {
         this.baseUrl = new URL(fromHtml, this.baseUrl);
         // TODO deal with the case the base tag appears _AFTER_ links, we need to "go back" and replace all links in this case
         //     which is very lame
         value = ''; // write empty base
+      } else {
+        value = this.getLink(attribute, fromHtml);
       }
       // console.log("tag", tagName, "attr", attribute, fromHtml, "->", value);
       for (let k = 0; k < value.length; k++) {
@@ -164,8 +171,39 @@ class Generator {
     if (this.current() === c.ANGLE_CLOSE) {
       this.addAndProgress(); // add >
     }
+    if (tagName === 'style') {
+      return this.parseStyleTag(); // style tag handling
+    }
   }
-
+  parseStyleTag() {
+    // special style tag handling, can't nest, treat whole content as CSS
+    let initial = this.i;
+    const isEnd = () => 
+      this.current() === c.ANGLE_OPEN &&
+      this.data[this.i + 1] === c.SLASH && 
+      isStyle(
+        this.data[this.i + 2],
+        this.data[this.i + 3],
+        this.data[this.i + 4],
+        this.data[this.i + 5],
+        this.data[this.i + 6]
+      );
+    while(!isEnd()) {
+      this.i++;
+    }
+    let styleContents = this.data.slice(initial, this.i);
+    let value = this.cssProcessor && this.cssProcessor(styleContents, this.mapping, this.baseUrl);
+    let buffered = Buffer.from(value); // might be string
+    buffered.copy(this.replaced, this.j);
+    this.j += buffered.length;
+    this.addAndProgress(); // <
+    this.addAndProgress(); // /
+    this.addAndProgress(); // s
+    this.addAndProgress(); // t
+    this.addAndProgress(); // y
+    this.addAndProgress(); // l
+    this.addAndProgress(); // e
+  }
   getLink(attribute, fromHtml) {
     if (fromHtml.charAt(0) === '#') { // internal hash
       return fromHtml;
@@ -206,6 +244,9 @@ class Generator {
     }
     if (attribute === attrs.XLINKHREF) {
       return tagName === 'feimage' || tagName === 'image' || tagName === 'use';
+    }
+    if (attribute === attrs.STYLE) {
+      return true;
     }
     return false;
   }
@@ -278,7 +319,12 @@ class Generator {
       if (isData(data[initial], data[initial + 1], data[initial + 2], data[initial + 3])) {
         return attrs.Data;
       }
-
+      return attrs.OTHER;
+    }
+    if (len === 5) {
+      if (isStyle(data[initial], data[initial + 1],data[initial + 2], data[initial + 3], data[initial + 4])) {
+        return attrs.STYLE;
+      }
       return attrs.OTHER;
     }
     if (len === 6) {
@@ -327,6 +373,13 @@ class Generator {
     this.i++;
     this.j++;
   }
+  dumpIf(fn = () => true, logger = false) {
+    let next100 = this.data.slice(this.i, this.i + 100).toString();
+    if (fn(next100)) {
+      console.log(new Error().stack);
+      console.log(logger ? logger(next100) : next100);
+    }
+  } 
 
   lenOk() {
     return this.i < this.len;

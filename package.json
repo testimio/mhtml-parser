@@ -24,8 +24,10 @@
   },
   "homepage": "https://github.com/testimio/mhtml-parser#readme",
   "dependencies": {
+    "bluebird": "3.5.2",
     "cheerio": "1.0.0-rc.2",
     "css-tree": "1.0.0-alpha.29",
+    "express": "^4.16.4",
     "filenamify": "2.1.0"
   },
   "devDependencies": {

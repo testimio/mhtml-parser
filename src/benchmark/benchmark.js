@@ -1,9 +1,9 @@
 const filenamify = require('filenamify');
-const Processor = require('../processor');
-const MHTMLParser = require('./mhtmlParser'); // old code
-const co = require("bluebird").coroutine;
+const co = require('bluebird').coroutine;
 const { promisifyAll } = require('bluebird');
 const fs = promisifyAll(require('fs'));
+const MHTMLParser = require('./mhtmlParser'); // old code
+const Processor = require('../processor');
 
 /* eslint-disable */
 const markP30 = co(function * markP30(fn, name, file) {

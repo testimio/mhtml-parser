@@ -71,10 +71,10 @@ module.exports = class Parser {
   rewrite() {
     const entries = this.parts
       .filter(part => part.location)
-      .map(part => [part.location, this.rewriteFn(part.location)]);
+      .map(part => [part.location.trim(), this.rewriteFn(part.location).trim()]);
     const rewriteMap = new Map(entries);
     for (const part of this.parts.filter(x => x.id)) {
-      rewriteMap.set(`cid:${part.id}`, this.rewriteFn(part.location || part.id));
+      rewriteMap.set(`cid:${part.id}`, this.rewriteFn(part.location || part.id.trim()));
     }
     for (const part of this.parts) {
       const replacer = ({

@@ -16,7 +16,8 @@ module.exports = {
     if (generator) {
       generator.reset(domBuffer, resourcesMap, baseUrl);
     } else {
-      generator = new Generator(domBuffer, resourcesMap, baseUrl); // TODO baseUrl + URL resolving
+      generator = new Generator(domBuffer, resourcesMap, baseUrl);
+      generator.cssProcessor = module.exports.css;
     }
     generator.parse();
     if (gotString) {
@@ -37,6 +38,9 @@ module.exports = {
   },
   css(cssString, resourcesMap, baseUrl) {
     return cssString.toString().replace(CSS_REPLACE_RE, (whole, match) => {
+      if (match.charAt(0) === '/' && match.charAt(1) === '/') { // protocol agnostic URL
+        match = `http:${match}`;
+      }
       const link = new URL(match, baseUrl).toString();
       const mapped = resourcesMap.get(link) || link;
       /* eslint-disable prefer-template */ // hot point
