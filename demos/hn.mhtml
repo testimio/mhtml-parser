@@ -1,0 +1,876 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://news.ycombinator.com/
+Subject: Hacker News
+Date: Mon, 17 Dec 2018 11:17:47 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--yOnp5Dila2ebPiPirl3bdQxE9a1hX65WNTz2VnwwYI----"
+
+
+------MultipartBoundary--yOnp5Dila2ebPiPirl3bdQxE9a1hX65WNTz2VnwwYI----
+Content-Type: text/html
+Content-ID: <frame-DD3D21AD254A79BF7D37A79EFE4AA83B@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://news.ycombinator.com/
+
+<html op=3D"news"><head><meta http-equiv=3D"Content-Type" content=3D"text/h=
+tml; charset=3DUTF-8"><meta name=3D"referrer" content=3D"origin"><meta name=
+=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.0"><link r=
+el=3D"stylesheet" type=3D"text/css" href=3D"https://news.ycombinator.com/ne=
+ws.css?i3QZFyQGGgTNEupNTrnX">
+            <link rel=3D"shortcut icon" href=3D"https://news.ycombinator.co=
+m/favicon.ico">
+          <link rel=3D"alternate" type=3D"application/rss+xml" title=3D"RSS=
+" href=3D"https://news.ycombinator.com/rss">
+        <title>Hacker News</title></head><body><center><table id=3D"hnmain"=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"85%" bgcolor=3D"=
+#f6f6ef">
+        <tbody><tr><td bgcolor=3D"#ff6600"><table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"padding:2px"><tbody><tr><t=
+d style=3D"width:18px;padding-right:4px"><a href=3D"https://news.ycombinato=
+r.com/"><img src=3D"https://news.ycombinator.com/y18.gif" width=3D"18" heig=
+ht=3D"18" style=3D"border:1px white solid;"></a></td>
+                  <td style=3D"line-height:12pt; height:10px;"><span class=
+=3D"pagetop"><b class=3D"hnname"><a href=3D"https://news.ycombinator.com/ne=
+ws">Hacker News</a></b>
+              <a href=3D"https://news.ycombinator.com/newest">new</a> | <a =
+href=3D"https://news.ycombinator.com/newcomments">comments</a> | <a href=3D=
+"https://news.ycombinator.com/show">show</a> | <a href=3D"https://news.ycom=
+binator.com/ask">ask</a> | <a href=3D"https://news.ycombinator.com/jobs">jo=
+bs</a> | <a href=3D"https://news.ycombinator.com/submit">submit</a>        =
+    </span></td><td style=3D"text-align:right;padding-right:4px;"><span cla=
+ss=3D"pagetop">
+                              <a href=3D"https://news.ycombinator.com/login=
+?goto=3Dnews">login</a>
+                          </span></td>
+              </tr></tbody></table></td></tr>
+<tr style=3D"height:10px"></tr><tr><td><table border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" class=3D"itemlist">
+              <tbody><tr class=3D"athing" id=3D"18696291">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">1.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a id=
+=3D"up_18696291" href=3D"https://news.ycombinator.com/vote?id=3D18696291&am=
+p;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></div=
+></a></center></td><td class=3D"title"><a href=3D"https://sandspiel.club/" =
+class=3D"storylink">Sandspiel =E2=80=93 A falling sand game built in Rust a=
+nd WebGL</a><span class=3D"sitebit comhead"> (<a href=3D"https://news.ycomb=
+inator.com/from?site=3Dsandspiel.club"><span class=3D"sitestr">sandspiel.cl=
+ub</span></a>)</span></td></tr><tr><td colspan=3D"2"></td><td class=3D"subt=
+ext">
+        <span class=3D"score" id=3D"score_18696291">750 points</span> by <a=
+ href=3D"https://news.ycombinator.com/user?id=3D15DCFA8F" class=3D"hnuser">=
+15DCFA8F</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/it=
+em?id=3D18696291">9 hours ago</a></span> <span id=3D"unv_18696291"></span> =
+| <a href=3D"https://news.ycombinator.com/hide?id=3D18696291&amp;goto=3Dnew=
+s">hide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18696291">1=
+16&nbsp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18698036">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">2.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a id=
+=3D"up_18698036" href=3D"https://news.ycombinator.com/vote?id=3D18698036&am=
+p;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></div=
+></a></center></td><td class=3D"title"><a href=3D"https://webkit.org/blog/6=
+161/locking-in-webkit/" class=3D"storylink">Locking in WebKit (2016)</a><sp=
+an class=3D"sitebit comhead"> (<a href=3D"https://news.ycombinator.com/from=
+?site=3Dwebkit.org"><span class=3D"sitestr">webkit.org</span></a>)</span></=
+td></tr><tr><td colspan=3D"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18698036">20 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3Dmpweiher" class=3D"hnuser">m=
+pweiher</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/ite=
+m?id=3D18698036">57 minutes ago</a></span> <span id=3D"unv_18698036"></span=
+> | <a href=3D"https://news.ycombinator.com/hide?id=3D18698036&amp;goto=3Dn=
+ews">hide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18698036"=
+>10&nbsp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18692108">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">3.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a id=
+=3D"up_18692108" href=3D"https://news.ycombinator.com/vote?id=3D18692108&am=
+p;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></div=
+></a></center></td><td class=3D"title"><a href=3D"https://www.economist.com=
+/leaders/2018/12/15/how-the-0001-invest" class=3D"storylink">How the 0.001%=
+ invest</a><span class=3D"sitebit comhead"> (<a href=3D"https://news.ycombi=
+nator.com/from?site=3Deconomist.com"><span class=3D"sitestr">economist.com<=
+/span></a>)</span></td></tr><tr><td colspan=3D"2"></td><td class=3D"subtext=
+">
+        <span class=3D"score" id=3D"score_18692108">105 points</span> by <a=
+ href=3D"https://news.ycombinator.com/user?id=3Dnikbackm" class=3D"hnuser">=
+nikbackm</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/it=
+em?id=3D18692108">6 hours ago</a></span> <span id=3D"unv_18692108"></span> =
+| <a href=3D"https://news.ycombinator.com/hide?id=3D18692108&amp;goto=3Dnew=
+s">hide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18692108">4=
+2&nbsp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18697387">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">4.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a id=
+=3D"up_18697387" href=3D"https://news.ycombinator.com/vote?id=3D18697387&am=
+p;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></div=
+></a></center></td><td class=3D"title"><a href=3D"https://www.smithsonianma=
+g.com/smart-news/long-before-trees-overtook-the-land-earth-was-covered-by-g=
+iant-mushrooms-13709647/" class=3D"storylink">Long Before Trees Overtook th=
+e Land, Earth Was Covered by Giant Mushrooms</a><span class=3D"sitebit comh=
+ead"> (<a href=3D"https://news.ycombinator.com/from?site=3Dsmithsonianmag.c=
+om"><span class=3D"sitestr">smithsonianmag.com</span></a>)</span></td></tr>=
+<tr><td colspan=3D"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18697387">38 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3Dmyinnerbanjo" class=3D"hnuse=
+r">myinnerbanjo</a> <span class=3D"age"><a href=3D"https://news.ycombinator=
+.com/item?id=3D18697387">4 hours ago</a></span> <span id=3D"unv_18697387"><=
+/span> | <a href=3D"https://news.ycombinator.com/hide?id=3D18697387&amp;got=
+o=3Dnews">hide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D1869=
+7387">8&nbsp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18692914">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">5.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a id=
+=3D"up_18692914" href=3D"https://news.ycombinator.com/vote?id=3D18692914&am=
+p;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></div=
+></a></center></td><td class=3D"title"><a href=3D"https://longreads.com/201=
+8/12/13/seasonal-associate/" class=3D"storylink" rel=3D"nofollow">Seasonal =
+Associate</a><span class=3D"sitebit comhead"> (<a href=3D"https://news.ycom=
+binator.com/from?site=3Dlongreads.com"><span class=3D"sitestr">longreads.co=
+m</span></a>)</span></td></tr><tr><td colspan=3D"2"></td><td class=3D"subte=
+xt">
+        <span class=3D"score" id=3D"score_18692914">5 points</span> by <a h=
+ref=3D"https://news.ycombinator.com/user?id=3Dkawera" class=3D"hnuser">kawe=
+ra</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/item?id=
+=3D18692914">1 hour ago</a></span> <span id=3D"unv_18692914"></span> | <a h=
+ref=3D"https://news.ycombinator.com/hide?id=3D18692914&amp;goto=3Dnews">hid=
+e</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18692914">discuss=
+</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18696840">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">6.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a id=
+=3D"up_18696840" href=3D"https://news.ycombinator.com/vote?id=3D18696840&am=
+p;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></div=
+></a></center></td><td class=3D"title"><a href=3D"http://palmerluckey.com/o=
+culus-goblack-how-to-make-your-oculus-go-better/" class=3D"storylink">Oculu=
+s GoBlack =E2=80=93 How to Make Your Oculus Go Better</a><span class=3D"sit=
+ebit comhead"> (<a href=3D"https://news.ycombinator.com/from?site=3Dpalmerl=
+uckey.com"><span class=3D"sitestr">palmerluckey.com</span></a>)</span></td>=
+</tr><tr><td colspan=3D"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18696840">84 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3DDanAndersen" class=3D"hnuser=
+">DanAndersen</a> <span class=3D"age"><a href=3D"https://news.ycombinator.c=
+om/item?id=3D18696840">7 hours ago</a></span> <span id=3D"unv_18696840"></s=
+pan> | <a href=3D"https://news.ycombinator.com/hide?id=3D18696840&amp;goto=
+=3Dnews">hide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18696=
+840">25&nbsp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18696649">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">7.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a id=
+=3D"up_18696649" href=3D"https://news.ycombinator.com/vote?id=3D18696649&am=
+p;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></div=
+></a></center></td><td class=3D"title"><a href=3D"http://dtrace.org/blogs/b=
+mc/2018/12/16/a-eula-in-foss-clothing/" class=3D"storylink">A EULA in FOSS =
+clothing?</a><span class=3D"sitebit comhead"> (<a href=3D"https://news.ycom=
+binator.com/from?site=3Ddtrace.org"><span class=3D"sitestr">dtrace.org</spa=
+n></a>)</span></td></tr><tr><td colspan=3D"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18696649">122 points</span> by <a=
+ href=3D"https://news.ycombinator.com/user?id=3Dbcantrill" class=3D"hnuser"=
+>bcantrill</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/=
+item?id=3D18696649">8 hours ago</a></span> <span id=3D"unv_18696649"></span=
+> | <a href=3D"https://news.ycombinator.com/hide?id=3D18696649&amp;goto=3Dn=
+ews">hide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18696649"=
+>46&nbsp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18695791">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">8.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a id=
+=3D"up_18695791" href=3D"https://news.ycombinator.com/vote?id=3D18695791&am=
+p;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></div=
+></a></center></td><td class=3D"title"><a href=3D"https://adactio.com/journ=
+al/14608" class=3D"storylink">Browsers</a><span class=3D"sitebit comhead"> =
+(<a href=3D"https://news.ycombinator.com/from?site=3Dadactio.com"><span cla=
+ss=3D"sitestr">adactio.com</span></a>)</span></td></tr><tr><td colspan=3D"2=
+"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18695791">216 points</span> by <a=
+ href=3D"https://news.ycombinator.com/user?id=3Dindysigners" class=3D"hnuse=
+r">indysigners</a> <span class=3D"age"><a href=3D"https://news.ycombinator.=
+com/item?id=3D18695791">12 hours ago</a></span> <span id=3D"unv_18695791"><=
+/span> | <a href=3D"https://news.ycombinator.com/hide?id=3D18695791&amp;got=
+o=3Dnews">hide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D1869=
+5791">138&nbsp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18697567">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">9.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a id=
+=3D"up_18697567" href=3D"https://news.ycombinator.com/vote?id=3D18697567&am=
+p;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></div=
+></a></center></td><td class=3D"title"><a href=3D"https://www.c82.net/eucli=
+d/" class=3D"storylink">Byrne=E2=80=99s Euclid =E2=80=93 A reproduction the=
+ celebrated work from 1847</a><span class=3D"sitebit comhead"> (<a href=3D"=
+https://news.ycombinator.com/from?site=3Dc82.net"><span class=3D"sitestr">c=
+82.net</span></a>)</span></td></tr><tr><td colspan=3D"2"></td><td class=3D"=
+subtext">
+        <span class=3D"score" id=3D"score_18697567">19 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3Dakalin" class=3D"hnuser">aka=
+lin</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/item?id=
+=3D18697567">3 hours ago</a></span> <span id=3D"unv_18697567"></span> | <a =
+href=3D"https://news.ycombinator.com/hide?id=3D18697567&amp;goto=3Dnews">hi=
+de</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18697567">2&nbsp=
+;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18695965">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">10.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18695965" href=3D"https://news.ycombinator.com/vote?id=3D18695965&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://arxiv.org/abs/18=
+12.04959" class=3D"storylink">Systematic Parsing of X.509: Eradicating Secu=
+rity Issues with a Parse Tree</a><span class=3D"sitebit comhead"> (<a href=
+=3D"https://news.ycombinator.com/from?site=3Darxiv.org"><span class=3D"site=
+str">arxiv.org</span></a>)</span></td></tr><tr><td colspan=3D"2"></td><td c=
+lass=3D"subtext">
+        <span class=3D"score" id=3D"score_18695965">121 points</span> by <a=
+ href=3D"https://news.ycombinator.com/user?id=3Dsnaky" class=3D"hnuser">sna=
+ky</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/item?id=
+=3D18695965">11 hours ago</a></span> <span id=3D"unv_18695965"></span> | <a=
+ href=3D"https://news.ycombinator.com/hide?id=3D18695965&amp;goto=3Dnews">h=
+ide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18695965">15&nb=
+sp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18697910">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">11.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18697910" href=3D"https://news.ycombinator.com/vote?id=3D18697910&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://github.com/Glorf=
+/lear" class=3D"storylink" rel=3D"nofollow">LEAR: HTTP server designed to b=
+e simple and fast to serve static resources</a><span class=3D"sitebit comhe=
+ad"> (<a href=3D"https://news.ycombinator.com/from?site=3Dgithub.com"><span=
+ class=3D"sitestr">github.com</span></a>)</span></td></tr><tr><td colspan=
+=3D"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18697910">10 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3Dmbien" class=3D"hnuser">mbie=
+n</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/item?id=
+=3D18697910">1 hour ago</a></span> <span id=3D"unv_18697910"></span> | <a h=
+ref=3D"https://news.ycombinator.com/hide?id=3D18697910&amp;goto=3Dnews">hid=
+e</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18697910">3&nbsp;=
+comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18696262">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">12.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18696262" href=3D"https://news.ycombinator.com/vote?id=3D18696262&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://sciencedemonstra=
+tions.fas.harvard.edu/presentations/pendulum-waves" class=3D"storylink">Pen=
+dulum Waves (2010)</a><span class=3D"sitebit comhead"> (<a href=3D"https://=
+news.ycombinator.com/from?site=3Dfas.harvard.edu"><span class=3D"sitestr">f=
+as.harvard.edu</span></a>)</span></td></tr><tr><td colspan=3D"2"></td><td c=
+lass=3D"subtext">
+        <span class=3D"score" id=3D"score_18696262">103 points</span> by <a=
+ href=3D"https://news.ycombinator.com/user?id=3Dkp25" class=3D"hnuser">kp25=
+</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/item?id=3D=
+18696262">10 hours ago</a></span> <span id=3D"unv_18696262"></span> | <a hr=
+ef=3D"https://news.ycombinator.com/hide?id=3D18696262&amp;goto=3Dnews">hide=
+</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18696262">21&nbsp;=
+comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18692192">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">13.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18692192" href=3D"https://news.ycombinator.com/vote?id=3D18692192&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"http://interactive.fusio=
+n.net/death-by-fentanyl/the-walter-white-of-wichita.html" class=3D"storylin=
+k">The Walter White of Wichita (2016)</a><span class=3D"sitebit comhead"> (=
+<a href=3D"https://news.ycombinator.com/from?site=3Dfusion.net"><span class=
+=3D"sitestr">fusion.net</span></a>)</span></td></tr><tr><td colspan=3D"2"><=
+/td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18692192">41 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3Dbspn" class=3D"hnuser">bspn<=
+/a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/item?id=3D1=
+8692192">7 hours ago</a></span> <span id=3D"unv_18692192"></span> | <a href=
+=3D"https://news.ycombinator.com/hide?id=3D18692192&amp;goto=3Dnews">hide</=
+a> | <a href=3D"https://news.ycombinator.com/item?id=3D18692192">16&nbsp;co=
+mments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18695721">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">14.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18695721" href=3D"https://news.ycombinator.com/vote?id=3D18695721&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://hbr.org/2018/09/=
+why-design-thinking-works" class=3D"storylink">Why Design Thinking Works</a=
+><span class=3D"sitebit comhead"> (<a href=3D"https://news.ycombinator.com/=
+from?site=3Dhbr.org"><span class=3D"sitestr">hbr.org</span></a>)</span></td=
+></tr><tr><td colspan=3D"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18695721">157 points</span> by <a=
+ href=3D"https://news.ycombinator.com/user?id=3Dhelloworld" class=3D"hnuser=
+">helloworld</a> <span class=3D"age"><a href=3D"https://news.ycombinator.co=
+m/item?id=3D18695721">12 hours ago</a></span> <span id=3D"unv_18695721"></s=
+pan> | <a href=3D"https://news.ycombinator.com/hide?id=3D18695721&amp;goto=
+=3Dnews">hide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18695=
+721">69&nbsp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18697075">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">15.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18697075" href=3D"https://news.ycombinator.com/vote?id=3D18697075&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"http://www.brainfacts.or=
+g/thinking-sensing-and-behaving/learning-and-memory/2018/storing-memories-i=
+n-your-synapses-101118" class=3D"storylink">Storing Memories in Your Synaps=
+es</a><span class=3D"sitebit comhead"> (<a href=3D"https://news.ycombinator=
+.com/from?site=3Dbrainfacts.org"><span class=3D"sitestr">brainfacts.org</sp=
+an></a>)</span></td></tr><tr><td colspan=3D"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18697075">35 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3Dlaurex" class=3D"hnuser">lau=
+rex</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/item?id=
+=3D18697075">5 hours ago</a></span> <span id=3D"unv_18697075"></span> | <a =
+href=3D"https://news.ycombinator.com/hide?id=3D18697075&amp;goto=3Dnews">hi=
+de</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18697075">3&nbsp=
+;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18691281">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">16.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18691281" href=3D"https://news.ycombinator.com/vote?id=3D18691281&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"http://www.niemanlab.org=
+/2018/12/few-people-are-actually-trapped-in-filter-bubbles-why-do-they-like=
+-to-say-that-they-are/" class=3D"storylink">Few people are actually trapped=
+ in filter bubbles. Why do they say they are?</a><span class=3D"sitebit com=
+head"> (<a href=3D"https://news.ycombinator.com/from?site=3Dniemanlab.org">=
+<span class=3D"sitestr">niemanlab.org</span></a>)</span></td></tr><tr><td c=
+olspan=3D"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18691281">72 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3DReedx" class=3D"hnuser">Reed=
+x</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/item?id=
+=3D18691281">10 hours ago</a></span> <span id=3D"unv_18691281"></span> | <a=
+ href=3D"https://news.ycombinator.com/hide?id=3D18691281&amp;goto=3Dnews">h=
+ide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18691281">57&nb=
+sp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18695945">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">17.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18695945" href=3D"https://news.ycombinator.com/vote?id=3D18695945&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://www.wsj.com/arti=
+cles/pushback-derails-company-that-thrived-on-patent-lawsuits-11544972671" =
+class=3D"storylink">Pushback Derails Company That Thrived on Patent Lawsuit=
+s</a><span class=3D"sitebit comhead"> (<a href=3D"https://news.ycombinator.=
+com/from?site=3Dwsj.com"><span class=3D"sitestr">wsj.com</span></a>)</span>=
+</td></tr><tr><td colspan=3D"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18695945">75 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3Dseibelj" class=3D"hnuser">se=
+ibelj</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/item?=
+id=3D18695945">11 hours ago</a></span> <span id=3D"unv_18695945"></span> | =
+<a href=3D"https://news.ycombinator.com/hide?id=3D18695945&amp;goto=3Dnews"=
+>hide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18695945">5&n=
+bsp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18692902">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">18.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18692902" href=3D"https://news.ycombinator.com/vote?id=3D18692902&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://www.blackhat.com=
+/docs/us-15/materials/us-15-Krotofil-Rocking-The-Pocket-Book-Hacking-Chemic=
+al-Plant-For-Competition-And-Extortion-wp.pdf" class=3D"storylink">Hacking =
+chemical plants for competition and extortion (2015) [pdf]</a><span class=
+=3D"sitebit comhead"> (<a href=3D"https://news.ycombinator.com/from?site=3D=
+blackhat.com"><span class=3D"sitestr">blackhat.com</span></a>)</span></td><=
+/tr><tr><td colspan=3D"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18692902">13 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3DTomte" class=3D"hnuser">Tomt=
+e</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/item?id=
+=3D18692902">4 hours ago</a></span> <span id=3D"unv_18692902"></span> | <a =
+href=3D"https://news.ycombinator.com/hide?id=3D18692902&amp;goto=3Dnews">hi=
+de</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18692902">discus=
+s</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18697139">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">19.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18697139" href=3D"https://news.ycombinator.com/vote?id=3D18697139&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://github.com/ndabA=
+P/vue-go-example" class=3D"storylink">Vue.js and Go example project</a><spa=
+n class=3D"sitebit comhead"> (<a href=3D"https://news.ycombinator.com/from?=
+site=3Dgithub.com"><span class=3D"sitestr">github.com</span></a>)</span></t=
+d></tr><tr><td colspan=3D"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18697139">72 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3DLiriel" class=3D"hnuser">Lir=
+iel</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/item?id=
+=3D18697139">5 hours ago</a></span> <span id=3D"unv_18697139"></span> | <a =
+href=3D"https://news.ycombinator.com/hide?id=3D18697139&amp;goto=3Dnews">hi=
+de</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18697139">9&nbsp=
+;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18697606">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">20.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18697606" href=3D"https://news.ycombinator.com/vote?id=3D18697606&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://www.ncbi.nlm.nih=
+.gov/m/pubmed/12472346/" class=3D"storylink">Acne vulgaris: a disease of We=
+stern civilization (2002)</a><span class=3D"sitebit comhead"> (<a href=3D"h=
+ttps://news.ycombinator.com/from?site=3Dnih.gov"><span class=3D"sitestr">ni=
+h.gov</span></a>)</span></td></tr><tr><td colspan=3D"2"></td><td class=3D"s=
+ubtext">
+        <span class=3D"score" id=3D"score_18697606">44 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3Dwallace_f" class=3D"hnuser">=
+wallace_f</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/i=
+tem?id=3D18697606">2 hours ago</a></span> <span id=3D"unv_18697606"></span>=
+ | <a href=3D"https://news.ycombinator.com/hide?id=3D18697606&amp;goto=3Dne=
+ws">hide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18697606">=
+26&nbsp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18696893">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">21.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18696893" href=3D"https://news.ycombinator.com/vote?id=3D18696893&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://brave.com/new-br=
+ave-22-percent-faster/" class=3D"storylink">The New Brave Is 22% Faster</a>=
+<span class=3D"sitebit comhead"> (<a href=3D"https://news.ycombinator.com/f=
+rom?site=3Dbrave.com"><span class=3D"sitestr">brave.com</span></a>)</span><=
+/td></tr><tr><td colspan=3D"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18696893">89 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3Dkristianp" class=3D"hnuser">=
+kristianp</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/i=
+tem?id=3D18696893">6 hours ago</a></span> <span id=3D"unv_18696893"></span>=
+ | <a href=3D"https://news.ycombinator.com/hide?id=3D18696893&amp;goto=3Dne=
+ws">hide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18696893">=
+50&nbsp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18691399">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">22.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18691399" href=3D"https://news.ycombinator.com/vote?id=3D18691399&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://dwheeler.com/inn=
+ovation/innovation.html" class=3D"storylink" rel=3D"nofollow">The Most Impo=
+rtant Software Innovations (2001-2017)</a><span class=3D"sitebit comhead"> =
+(<a href=3D"https://news.ycombinator.com/from?site=3Ddwheeler.com"><span cl=
+ass=3D"sitestr">dwheeler.com</span></a>)</span></td></tr><tr><td colspan=3D=
+"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18691399">16 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3Dcharlysl" class=3D"hnuser">c=
+harlysl</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/ite=
+m?id=3D18691399">2 hours ago</a></span> <span id=3D"unv_18691399"></span> |=
+ <a href=3D"https://news.ycombinator.com/hide?id=3D18691399&amp;goto=3Dnews=
+">hide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18691399">4&=
+nbsp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18695501">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">23.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18695501" href=3D"https://news.ycombinator.com/vote?id=3D18695501&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://www.failory.com/=
+mistakes/liveagent" class=3D"storylink">LiveAgent: Over $250K monthly recur=
+ring revenue with a spin-off project</a><span class=3D"sitebit comhead"> (<=
+a href=3D"https://news.ycombinator.com/from?site=3Dfailory.com"><span class=
+=3D"sitestr">failory.com</span></a>)</span></td></tr><tr><td colspan=3D"2">=
+</td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18695501">74 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3Dnicoserdeir" class=3D"hnuser=
+">nicoserdeir</a> <span class=3D"age"><a href=3D"https://news.ycombinator.c=
+om/item?id=3D18695501">13 hours ago</a></span> <span id=3D"unv_18695501"></=
+span> | <a href=3D"https://news.ycombinator.com/hide?id=3D18695501&amp;goto=
+=3Dnews">hide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18695=
+501">24&nbsp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18692227">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">24.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18692227" href=3D"https://news.ycombinator.com/vote?id=3D18692227&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://github.com/santi=
+nic/pampy/blob/master/README.md" class=3D"storylink">Pampy: Pattern Matchin=
+g for Python</a><span class=3D"sitebit comhead"> (<a href=3D"https://news.y=
+combinator.com/from?site=3Dgithub.com"><span class=3D"sitestr">github.com</=
+span></a>)</span></td></tr><tr><td colspan=3D"2"></td><td class=3D"subtext"=
+>
+        <span class=3D"score" id=3D"score_18692227">86 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3Dfagnerbrack" class=3D"hnuser=
+">fagnerbrack</a> <span class=3D"age"><a href=3D"https://news.ycombinator.c=
+om/item?id=3D18692227">9 hours ago</a></span> <span id=3D"unv_18692227"></s=
+pan> | <a href=3D"https://news.ycombinator.com/hide?id=3D18692227&amp;goto=
+=3Dnews">hide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18692=
+227">35&nbsp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18691922">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">25.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18691922" href=3D"https://news.ycombinator.com/vote?id=3D18691922&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://www.bloomberg.co=
+m/news/features/2018-12-13/a-millennial-s-tiny-satellites-are-helping-china=
+-advance-in-the-space-race" class=3D"storylink">A Millennial=E2=80=99s Tiny=
+ Satellites Are Helping China Advance in the Space Race</a><span class=3D"s=
+itebit comhead"> (<a href=3D"https://news.ycombinator.com/from?site=3Dbloom=
+berg.com"><span class=3D"sitestr">bloomberg.com</span></a>)</span></td></tr=
+><tr><td colspan=3D"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18691922">37 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3DLeary" class=3D"hnuser">Lear=
+y</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/item?id=
+=3D18691922">11 hours ago</a></span> <span id=3D"unv_18691922"></span> | <a=
+ href=3D"https://news.ycombinator.com/hide?id=3D18691922&amp;goto=3Dnews">h=
+ide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18691922">23&nb=
+sp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18696664">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">26.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18696664" href=3D"https://news.ycombinator.com/vote?id=3D18696664&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://www.nytimes.com/=
+2018/12/16/business/media/netflix-movies-hollywood.html" class=3D"storylink=
+">Netflix=E2=80=99s Movie Blitz Takes Aim at Hollywood=E2=80=99s Heart</a><=
+span class=3D"sitebit comhead"> (<a href=3D"https://news.ycombinator.com/fr=
+om?site=3Dnytimes.com"><span class=3D"sitestr">nytimes.com</span></a>)</spa=
+n></td></tr><tr><td colspan=3D"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18696664">60 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3DElement_" class=3D"hnuser">E=
+lement_</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/ite=
+m?id=3D18696664">8 hours ago</a></span> <span id=3D"unv_18696664"></span> |=
+ <a href=3D"https://news.ycombinator.com/hide?id=3D18696664&amp;goto=3Dnews=
+">hide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18696664">57=
+&nbsp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18695128">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">27.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18695128" href=3D"https://news.ycombinator.com/vote?id=3D18695128&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://github.com/tinfo=
+ilboy/CTML" class=3D"storylink">Show HN: Single-header C++11 HTML document =
+constructor</a><span class=3D"sitebit comhead"> (<a href=3D"https://news.yc=
+ombinator.com/from?site=3Dgithub.com"><span class=3D"sitestr">github.com</s=
+pan></a>)</span></td></tr><tr><td colspan=3D"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18695128">79 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3Dtinfoilboy" class=3D"hnuser"=
+>tinfoilboy</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com=
+/item?id=3D18695128">14 hours ago</a></span> <span id=3D"unv_18695128"></sp=
+an> | <a href=3D"https://news.ycombinator.com/hide?id=3D18695128&amp;goto=
+=3Dnews">hide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18695=
+128">9&nbsp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18692823">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">28.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18692823" href=3D"https://news.ycombinator.com/vote?id=3D18692823&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://www.bbc.co.uk/ne=
+ws/resources/idt-sh/jered_threatin" class=3D"storylink">Jered Threatin: A c=
+onversation with a false rock god</a><span class=3D"sitebit comhead"> (<a h=
+ref=3D"https://news.ycombinator.com/from?site=3Dbbc.co.uk"><span class=3D"s=
+itestr">bbc.co.uk</span></a>)</span></td></tr><tr><td colspan=3D"2"></td><t=
+d class=3D"subtext">
+        <span class=3D"score" id=3D"score_18692823">18 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3Diamben" class=3D"hnuser">iam=
+ben</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/item?id=
+=3D18692823">7 hours ago</a></span> <span id=3D"unv_18692823"></span> | <a =
+href=3D"https://news.ycombinator.com/hide?id=3D18692823&amp;goto=3Dnews">hi=
+de</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18692823">5&nbsp=
+;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18695836">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">29.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18695836" href=3D"https://news.ycombinator.com/vote?id=3D18695836&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"http://www.qnx.com/devel=
+opers/docs/6.3.2/neutrino/sys_arch/kernel.html" class=3D"storylink">The QNX=
+ Neutrino Microkernel (2007)</a><span class=3D"sitebit comhead"> (<a href=
+=3D"https://news.ycombinator.com/from?site=3Dqnx.com"><span class=3D"sitest=
+r">qnx.com</span></a>)</span></td></tr><tr><td colspan=3D"2"></td><td class=
+=3D"subtext">
+        <span class=3D"score" id=3D"score_18695836">38 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3Dm0th87" class=3D"hnuser">m0t=
+h87</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/item?id=
+=3D18695836">12 hours ago</a></span> <span id=3D"unv_18695836"></span> | <a=
+ href=3D"https://news.ycombinator.com/hide?id=3D18695836&amp;goto=3Dnews">h=
+ide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18695836">15&nb=
+sp;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+                <tr class=3D"athing" id=3D"18691605">
+      <td align=3D"right" valign=3D"top" class=3D"title"><span class=3D"ran=
+k">30.</span></td>      <td valign=3D"top" class=3D"votelinks"><center><a i=
+d=3D"up_18691605" href=3D"https://news.ycombinator.com/vote?id=3D18691605&a=
+mp;how=3Dup&amp;goto=3Dnews"><div class=3D"votearrow" title=3D"upvote"></di=
+v></a></center></td><td class=3D"title"><a href=3D"https://somethingaboutma=
+ps.wordpress.com/2018/11/26/typewriter-cartography/" class=3D"storylink">Ty=
+pewriter Cartography</a><span class=3D"sitebit comhead"> (<a href=3D"https:=
+//news.ycombinator.com/from?site=3Dsomethingaboutmaps.wordpress.com"><span =
+class=3D"sitestr">somethingaboutmaps.wordpress.com</span></a>)</span></td><=
+/tr><tr><td colspan=3D"2"></td><td class=3D"subtext">
+        <span class=3D"score" id=3D"score_18691605">65 points</span> by <a =
+href=3D"https://news.ycombinator.com/user?id=3DJureko" class=3D"hnuser">Jur=
+eko</a> <span class=3D"age"><a href=3D"https://news.ycombinator.com/item?id=
+=3D18691605">14 hours ago</a></span> <span id=3D"unv_18691605"></span> | <a=
+ href=3D"https://news.ycombinator.com/hide?id=3D18691605&amp;goto=3Dnews">h=
+ide</a> | <a href=3D"https://news.ycombinator.com/item?id=3D18691605">6&nbs=
+p;comments</a>              </td></tr>
+      <tr class=3D"spacer" style=3D"height:5px"></tr>
+            <tr class=3D"morespace" style=3D"height:10px"></tr><tr><td cols=
+pan=3D"2"></td><td class=3D"title"><a href=3D"https://news.ycombinator.com/=
+news?p=3D2" class=3D"morelink" rel=3D"nofollow">More</a></td></tr>
+  </tbody></table>
+</td></tr>
+<tr><td><img src=3D"https://news.ycombinator.com/s.gif" height=3D"10" width=
+=3D"0"><table width=3D"100%" cellspacing=3D"0" cellpadding=3D"1"><tbody><tr=
+><td bgcolor=3D"#ff6600"></td></tr></tbody></table><br><center><span class=
+=3D"yclinks"><a href=3D"https://news.ycombinator.com/newsguidelines.html">G=
+uidelines</a>
+        | <a href=3D"https://news.ycombinator.com/newsfaq.html">FAQ</a>
+        | <a href=3D"mailto:hn@ycombinator.com">Support</a>
+        | <a href=3D"https://github.com/HackerNews/API">API</a>
+        | <a href=3D"https://news.ycombinator.com/security.html">Security</=
+a>
+        | <a href=3D"https://news.ycombinator.com/lists">Lists</a>
+        | <a href=3D"https://news.ycombinator.com/bookmarklet.html" rel=3D"=
+nofollow">Bookmarklet</a>
+        | <a href=3D"http://www.ycombinator.com/legal/">Legal</a>
+        | <a href=3D"http://www.ycombinator.com/apply/">Apply to YC</a>
+        | <a href=3D"mailto:hn@ycombinator.com">Contact</a></span><br><br><=
+form method=3D"get" action=3D"https://hn.algolia.com/">Search:
+          <input type=3D"text" name=3D"q" value=3D"" size=3D"17" autocorrec=
+t=3D"off" spellcheck=3D"false" autocapitalize=3D"off" autocomplete=3D"false=
+"></form>
+            </center></td></tr>
+      </tbody></table></center>
+ =20
+</body></html>
+------MultipartBoundary--yOnp5Dila2ebPiPirl3bdQxE9a1hX65WNTz2VnwwYI----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://news.ycombinator.com/news.css?i3QZFyQGGgTNEupNTrnX
+
+@charset "utf-8";
+
+body { font-family: Verdana, Geneva, sans-serif; font-size: 10pt; color: rg=
+b(130, 130, 130); }
+
+td { font-family: Verdana, Geneva, sans-serif; font-size: 10pt; color: rgb(=
+130, 130, 130); }
+
+.admin td { font-family: Verdana, Geneva, sans-serif; font-size: 8.5pt; col=
+or: rgb(0, 0, 0); }
+
+.subtext td { font-family: Verdana, Geneva, sans-serif; font-size: 7pt; col=
+or: rgb(130, 130, 130); }
+
+input { font-family: monospace; font-size: 10pt; }
+
+input[type=3D"\"submit\""] { font-family: Verdana, Geneva, sans-serif; }
+
+textarea { font-family: monospace; font-size: 10pt; }
+
+a:link { color: rgb(0, 0, 0); text-decoration: none; }
+
+a:visited { color: rgb(130, 130, 130); text-decoration: none; }
+
+.default { font-family: Verdana, Geneva, sans-serif; font-size: 10pt; color=
+: rgb(130, 130, 130); }
+
+.admin { font-family: Verdana, Geneva, sans-serif; font-size: 8.5pt; color:=
+ rgb(0, 0, 0); }
+
+.title { font-family: Verdana, Geneva, sans-serif; font-size: 10pt; color: =
+rgb(130, 130, 130); }
+
+.subtext { font-family: Verdana, Geneva, sans-serif; font-size: 7pt; color:=
+ rgb(130, 130, 130); }
+
+.yclinks { font-family: Verdana, Geneva, sans-serif; font-size: 8pt; color:=
+ rgb(130, 130, 130); }
+
+.pagetop { font-family: Verdana, Geneva, sans-serif; font-size: 10pt; color=
+: rgb(34, 34, 34); }
+
+.comhead { font-family: Verdana, Geneva, sans-serif; font-size: 8pt; color:=
+ rgb(130, 130, 130); }
+
+.comment { font-family: Verdana, Geneva, sans-serif; font-size: 9pt; }
+
+.hnname { margin-right: 5px; }
+
+.comment a:link, .comment a:visited { text-decoration: underline; }
+
+.noshow { display: none; }
+
+.nosee { visibility: hidden; pointer-events: none; cursor: default; }
+
+.c00, .c00 a:link { color: rgb(0, 0, 0); }
+
+.c5a, .c5a a:link, .c5a a:visited { color: rgb(90, 90, 90); }
+
+.c73, .c73 a:link, .c73 a:visited { color: rgb(115, 115, 115); }
+
+.c82, .c82 a:link, .c82 a:visited { color: rgb(130, 130, 130); }
+
+.c88, .c88 a:link, .c88 a:visited { color: rgb(136, 136, 136); }
+
+.c9c, .c9c a:link, .c9c a:visited { color: rgb(156, 156, 156); }
+
+.cae, .cae a:link, .cae a:visited { color: rgb(174, 174, 174); }
+
+.cbe, .cbe a:link, .cbe a:visited { color: rgb(190, 190, 190); }
+
+.cce, .cce a:link, .cce a:visited { color: rgb(206, 206, 206); }
+
+.cdd, .cdd a:link, .cdd a:visited { color: rgb(221, 221, 221); }
+
+.pagetop a:visited { color: rgb(0, 0, 0); }
+
+.topsel a:link, .topsel a:visited { color: rgb(255, 255, 255); }
+
+.subtext a:link, .subtext a:visited { color: rgb(130, 130, 130); }
+
+.subtext a:hover { text-decoration: underline; }
+
+.comhead a:link, .subtext a:visited { color: rgb(130, 130, 130); }
+
+.comhead a:hover { text-decoration: underline; }
+
+.default p { margin-top: 8px; margin-bottom: 0px; }
+
+.pagebreak { break-before: page; }
+
+pre { overflow: auto; padding: 2px; }
+
+pre:hover { overflow: auto; }
+
+.votearrow { width: 10px; height: 10px; border: 0px; margin: 3px 2px 6px; b=
+ackground: url("grayarrow.gif") no-repeat; }
+
+.votelinks.nosee div.votearrow.rotate180 { display: none; }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), not all {
+  .votearrow { background-size: 10px; background-image: url("grayarrow2x.gi=
+f"); }
+}
+
+.rotate180 { transform: rotate(180deg); }
+
+@media only screen and (max-width: 750px) and (min-width: 300px) {
+  #hnmain { width: 100%; }
+  body { padding: 0px; margin: 0px; width: 100%; text-size-adjust: none; }
+  td { height: inherit !important; }
+  .title, .comment { font-size: inherit; }
+  span.pagetop { display: block; margin: 3px 5px; font-size: 12px; }
+  span.pagetop b { display: block; font-size: 15px; }
+  table.comment-tree .comment a { display: inline-block; max-width: 200px; =
+overflow: hidden; white-space: nowrap; text-overflow: ellipsis; vertical-al=
+ign: top; }
+  img[src=3D"s.gif"][width=3D"40"] { width: 12px; }
+  img[src=3D"s.gif"][width=3D"80"] { width: 24px; }
+  img[src=3D"s.gif"][width=3D"120"] { width: 36px; }
+  img[src=3D"s.gif"][width=3D"160"] { width: 48px; }
+  img[src=3D"s.gif"][width=3D"200"] { width: 60px; }
+  img[src=3D"s.gif"][width=3D"240"] { width: 72px; }
+  img[src=3D"s.gif"][width=3D"280"] { width: 84px; }
+  img[src=3D"s.gif"][width=3D"320"] { width: 96px; }
+  img[src=3D"s.gif"][width=3D"360"] { width: 108px; }
+  img[src=3D"s.gif"][width=3D"400"] { width: 120px; }
+  img[src=3D"s.gif"][width=3D"440"] { width: 132px; }
+  img[src=3D"s.gif"][width=3D"480"] { width: 144px; }
+  img[src=3D"s.gif"][width=3D"520"] { width: 156px; }
+  img[src=3D"s.gif"][width=3D"560"] { width: 168px; }
+  img[src=3D"s.gif"][width=3D"600"] { width: 180px; }
+  img[src=3D"s.gif"][width=3D"640"] { width: 192px; }
+  img[src=3D"s.gif"][width=3D"680"] { width: 204px; }
+  img[src=3D"s.gif"][width=3D"720"] { width: 216px; }
+  img[src=3D"s.gif"][width=3D"760"] { width: 228px; }
+  img[src=3D"s.gif"][width=3D"800"] { width: 240px; }
+  img[src=3D"s.gif"][width=3D"840"] { width: 252px; }
+  .title { font-size: 11pt; line-height: 14pt; }
+  .subtext { font-size: 9pt; }
+  .itemlist { padding-right: 5px; }
+  .votearrow { transform: scale(1.3, 1.3); margin-right: 6px; }
+  .votearrow.rotate180 { transform: rotate(180deg) scale(1.3, 1.3); }
+  .votelinks { min-width: 18px; }
+  .votelinks a { display: block; margin-bottom: 9px; }
+  input[type=3D"text"], input[type=3D"number"], textarea { font-size: 16px;=
+ width: 90%; }
+}
+
+.comment { max-width: 1215px; overflow: auto; }
+
+pre { max-width: 900px; }
+
+@media only screen and (max-width: 389px) and (min-width: 300px) {
+  .comment { max-width: 270px; overflow: auto; }
+  pre { max-width: 200px; }
+}
+
+@media only screen and (max-width: 509px) and (min-width: 390px) {
+  .comment { max-width: 350px; overflow: auto; }
+  pre { max-width: 260px; }
+}
+
+@media only screen and (max-width: 599px) and (min-width: 510px) {
+  .comment { max-width: 460px; overflow: auto; }
+  pre { max-width: 340px; }
+}
+
+@media only screen and (max-width: 689px) and (min-width: 600px) {
+  .comment { max-width: 540px; overflow: auto; }
+  pre { max-width: 400px; }
+}
+
+@media only screen and (max-width: 809px) and (min-width: 690px) {
+  .comment { max-width: 620px; overflow: auto; }
+  pre { max-width: 460px; }
+}
+
+@media only screen and (max-width: 899px) and (min-width: 810px) {
+  .comment { max-width: 730px; overflow: auto; }
+  pre { max-width: 540px; }
+}
+
+@media only screen and (max-width: 1079px) and (min-width: 900px) {
+  .comment { max-width: 810px; overflow: auto; }
+  pre { max-width: 600px; }
+}
+
+@media only screen and (max-width: 1169px) and (min-width: 1080px) {
+  .comment { max-width: 970px; overflow: auto; }
+  pre { max-width: 720px; }
+}
+
+@media only screen and (max-width: 1259px) and (min-width: 1170px) {
+  .comment { max-width: 1050px; overflow: auto; }
+  pre { max-width: 780px; }
+}
+
+@media only screen and (max-width: 1349px) and (min-width: 1260px) {
+  .comment { max-width: 1130px; overflow: auto; }
+  pre { max-width: 840px; }
+}
+------MultipartBoundary--yOnp5Dila2ebPiPirl3bdQxE9a1hX65WNTz2VnwwYI----
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: https://news.ycombinator.com/grayarrow.gif
+
+R0lGODlhCgAKALMJANPT06enp/b29r+/v52dnfn5+bq6usLCwpqamv///wAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAkALAAAAAAKAAoAAAQcMMlJq712GIzQDV1QFV0nUETZTYDaAdIhz3ISAQA7
+
+------MultipartBoundary--yOnp5Dila2ebPiPirl3bdQxE9a1hX65WNTz2VnwwYI----
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: https://news.ycombinator.com/y18.gif
+
+R0lGODlhEgASAKIAAP/jyvihV/aKLfmxc/////9mAAAAAAAAACH5BAAAAAAALAAAAAASABIAAAMp
+WLrc/jDKOQkRy8pBhuKeRAAKQFBBxwVUYY5twXVxodV3nLd77f9ASQIAOw==
+
+------MultipartBoundary--yOnp5Dila2ebPiPirl3bdQxE9a1hX65WNTz2VnwwYI----
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: https://news.ycombinator.com/s.gif
+
+R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==
+
+------MultipartBoundary--yOnp5Dila2ebPiPirl3bdQxE9a1hX65WNTz2VnwwYI------
