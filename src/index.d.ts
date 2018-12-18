@@ -1,18 +1,18 @@
 declare module 'fast-mhtml' {
-  type ParserConfig = {
-    rewriteFn: (url: String) => String;
-    maxFileSize: Number
-  };
-  type FileResult = {
+  interface IParserConfig {
+    rewriteFn?: (url: string) => string;
+    maxFileSize?: number
+  }
+  interface IFileResult {
     contents: Buffer | string;
     type: string;
     filename: string;
-  };
+  }
   export class Parser {
-    constructor(config: ParserConfig);
-    parse(contents: Buffer | String);
+    constructor(config?: IParserConfig);
+    parse(contents: Buffer | string);
     rewrite();
-    spit(): FileResult[];
+    spit(): IFileResult[];
   }
   export class Converter {
     static serve();
