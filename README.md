@@ -1,6 +1,6 @@
 This package parses MHTML files into multiple HTML files.
 
-It aims to handle url resolution edge cases. It features a hand-written HTML parser that doesn't keep the tree or context which is roughly 10 times faster than running mhtmlparser2 (and about 15 times faster than running parse5).
+It aims to handle url resolution edge cases. It features a hand-written HTML parser that doesn't keep the tree or context which is roughly 10 times faster than running htmlparser2 (and about 15 times faster than running parse5).
 
 It rewrites local URLS so that links inside the page keep working.
 
