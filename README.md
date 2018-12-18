@@ -69,7 +69,7 @@ parser.parse(data);
 parser.spit(); // gets parsed data as array of {filename, contents}
 ```
 
-### `Parser.prototype.rerwite()
+### `Parser.prototype.rerwite()`
 
 Rewrites all links in the given mhtml file to refer to the other files and passes them through the parser's `rewriteFn` (filenamify by default).
 
