@@ -16,15 +16,12 @@ module.exports = (encoding, body) => {
 const EQUALS = '='.charCodeAt(0);
 const CR = '\r'.charCodeAt(0);
 const LF = '\n'.charCodeAt(0);
-const ZERO = '0'.charCodeAt(0);
-const NINE = '9'.charCodeAt(0);
-const A = 'A'.charCodeAt(0);
-const F = 'F'.charCodeAt(0);
 const D = 'D'.charCodeAt(0);
 const THREE = '3'.charCodeAt(0);
 
-const isAsciiNum = code => code >= ZERO && code <= NINE;
-const isHexDigit = code => code >= A && code <= F;
+const hex = Buffer.alloc(256, -1);
+for (let i = 0; i <= 9; i++) hex['0'.charCodeAt(0) + i] = i;
+for (let i = 0xa; i <= 0xf; i++) hex['A'.charCodeAt(0) + i - 0xa] = i;
 
 function convertQuotedPrintable(body) {
   const len = body.length;
@@ -45,8 +42,6 @@ function convertQuotedPrintable(body) {
       decoded[j++] = EQUALS;
       continue;
     }
-    let upperTranslated = 1000;
-    let lowerTranslated = 1000;
     if (upper === CR && lower === LF) {
       continue;
     }
@@ -54,30 +49,14 @@ function convertQuotedPrintable(body) {
       i--;
       continue;
     }
-    if (isAsciiNum(upper)) {
-      upperTranslated = upper - ZERO;
-    }
-    if (isHexDigit(upper)) {
-      upperTranslated = upper - A + 10;
-    }
-    if (upperTranslated === 1000) { // invalid seq
-      decoded[j++] = EQUALS;
-      decoded[j++] = upper;
-      decoded[j++] = lower;
-      continue;
-    }
-
-    if (isAsciiNum(lower)) {
-      lowerTranslated = lower - ZERO;
-    }
-    if (isHexDigit(lower)) {
-      lowerTranslated = lower - A + 10;
-    }
-    if (lowerTranslated === 1000) { // invalid seq
-      decoded[j++] = EQUALS;
-      decoded[j++] = upper;
-      decoded[j++] = lower;
-      continue;
+    const upperTranslated = hex[upper];
+    const lowerTranslated = hex[lower];
+    if ((upperTranslated | lowerTranslated) & 128) {
+        // invalid seq
+        decoded[j++] = EQUALS;
+        decoded[j++] = upper;
+        decoded[j++] = lower;
+        continue;
     }
     const shifted = upperTranslated << 4;
     decoded[j++] = (shifted | lowerTranslated);
