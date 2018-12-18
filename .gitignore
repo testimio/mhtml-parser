@@ -60,6 +60,6 @@ typings/
 # next.js build output
 .next
 # project output
-out/
+out/*
 .DS_Store
 coverage/
