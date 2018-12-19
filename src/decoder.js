@@ -1,5 +1,4 @@
 
-
 module.exports = (encoding, body) => {
   switch (encoding) {
     case 'base64':
@@ -22,11 +21,12 @@ const D = 'D'.charCodeAt(0);
 const THREE = '3'.charCodeAt(0);
 
 const translate = (() => {
-  let str = 'switch (c) {\n'
+  let str = 'switch (c) {\n';
   for (let i = 0; i <= 9; i++) str += `\tcase ${'0'.charCodeAt(0) + i}: return ${i};\n`;
   for (let i = 0xA; i <= 0xF; i++) str += `\tcase ${'A'.charCodeAt(0) + i - 0xA}: return ${i};\n`;
-  str += 'default: return -1;\n'
-  str += '};\n'
+  str += 'default: return -1;\n';
+  str += '};\n';
+  /* eslint-disable no-new-func */
   return Function('c', str);
 })();
 
@@ -67,8 +67,8 @@ function convertQuotedPrintable(body) {
     const shifted = upperTranslated << 4;
     decoded[j - 1] = shifted | lowerTranslated;
   }
-  for(let i = runTo; i < len; i++) {
-    decoded[j++] = body[i]
+  for (let i = runTo; i < len; i++) {
+    decoded[j++] = body[i];
   }
   return decoded.slice(0, j);
 }
