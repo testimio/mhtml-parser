@@ -3,7 +3,7 @@ const decoder = require('./decoder');
 
 describe('decoding', () => {
   it('decodes base64', () => {
-    expect(decoder('base64', Buffer.from('Hello').toString('base64')).toString()).to.equal('Hello');
+    expect(decoder('base64', Buffer.from(Buffer.from('Hello').toString('base64'))).toString()).to.equal('Hello');
   });
   it('decodes quoted printable', () => {
     expect(

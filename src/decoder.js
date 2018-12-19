@@ -1,8 +1,8 @@
-
+const { decode } = require('64'); 
 module.exports = (encoding, body) => {
   switch (encoding) {
     case 'base64':
-      return Buffer.from(body.toString(), 'base64'); // ew on the toString, TODO figure this out
+      return decode(body);
     case 'quoted-printable':
       return convertQuotedPrintable(body);
     case '8bit':
@@ -36,7 +36,7 @@ function convertQuotedPrintable(body) {
   let j = 0;
   const runTo = len - 3;
   for (let i = 0; i < runTo; i++) {
-    while (i < len && (decoded[j++] = body[i++]) !== EQUALS);
+    while (i < runTo && (decoded[j++] = body[i++]) !== EQUALS);
     if (i >= runTo) break;
     // We are dealing with a '=xx' sequence.
     const upper = body[i];
