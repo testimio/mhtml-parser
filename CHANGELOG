@@ -1,3 +1,7 @@
+v1.1.3
+
+Faster quoted printable decoding by optimizing for the common case. Thanks @giladno .
+
 v1.1.2
 
 Coverage, bug fix, types
