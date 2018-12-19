@@ -92,23 +92,23 @@ Run with `npm run benchmark`:
 
 ```
 Parser Serial
-Converted Example.com 1000 times. Memory(18.826828002929688) Average time: 0.56
-Converted github 100 times. Memory(12.074104309082031) Average time: 19.14
-Converted github large 10 times. Memory(12.456100463867188) Average time: 83
-Converted github unhandled rejection 10 times. Memory(12.049331665039062) Average time: 52.9
-Converted mdn 20 times. Memory(17.96161651611328) Average time: 12.05
-Converted wikipedia 20 times. Memory(17.274307250976562) Average time: 11.2
-Converted hn 20 times. Memory(13.093658447265625) Average time: 2.2
-Converted aliexpress 10 times. Memory(15.335090637207031) Average time: 351.6
-Converted stackoverflow 10 times. Memory(11.950820922851562) Average time: 38.7
+Converted Example.com 1000 times. Memory(18.68872833251953) Average time: 0.501
+Converted github 100 times. Memory(16.769790649414062) Average time: 20.85
+Converted github large 10 times. Memory(13.422744750976562) Average time: 82.1
+Converted github unhandled rejection 10 times. Memory(13.100151062011719) Average time: 55.7
+Converted mdn 20 times. Memory(15.045555114746094) Average time: 11.55
+Converted wikipedia 20 times. Memory(15.825851440429688) Average time: 9.95
+Converted hn 20 times. Memory(14.122116088867188) Average time: 1.4
+Converted aliexpress 10 times. Memory(30.917129516601562) Average time: 246.7
+Converted stackoverflow 10 times. Memory(12.987167358398438) Average time: 37.9
 Parser Parallel 30
-Converted Example.com in p=30. Memory(11.032470703125)  Average time: 0.4
-Converted github in p=30. Memory(59.808494567871094)  Average time: 15.433333333333334
-Converted github large in p=30. Memory(47.719322204589844)  Average time: 55.333333333333336
-Converted github unhandled rejection in p=30. Memory(54.20075988769531)  Average time: 36.766666666666666
-Converted mdn in p=30. Memory(33.22865295410156)  Average time: 8.566666666666666
-Converted wikipedia in p=30. Memory(19.14885711669922)  Average time: 7
-Converted hn in p=30. Memory(14.386123657226562)  Average time: 1.0666666666666667
-Converted aliexpress in p=30. Memory(35.472434997558594)  Average time: 183.16666666666666
-Converted stackoverflow in p=30. Memory(27.071426391601562)  Average time: 26.333333333333332
+Converted Example.com in p=30. Memory(12.05023193359375)  Average time: 0.36666666666666664
+Converted github in p=30. Memory(66.4161376953125)  Average time: 20.366666666666667
+Converted github large in p=30. Memory(57.51581573486328)  Average time: 60.03333333333333
+Converted github unhandled rejection in p=30. Memory(50.43537902832031)  Average time: 40.03333333333333
+Converted mdn in p=30. Memory(28.769508361816406)  Average time: 7.833333333333333
+Converted wikipedia in p=30. Memory(17.2572021484375)  Average time: 6.3
+Converted hn in p=30. Memory(15.370010375976562)  Average time: 0.8
+Converted aliexpress in p=30. Memory(66.49591827392578)  Average time: 109.23333333333333
+Converted stackoverflow in p=30. Memory(57.837928771972656)  Average time: 23.533333333333335
 ```

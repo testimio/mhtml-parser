@@ -1,4 +1,5 @@
-const { decode } = require('64'); 
+const { decode } = require('64');
+
 module.exports = (encoding, body) => {
   switch (encoding) {
     case 'base64':
