@@ -76,7 +76,7 @@ module.exports = {
           value.value = `'${mapped}'`;
         }
       } catch (e) {
-        
+        // ignore unable to map
       }
     });
     return csstree.generate(ast);

@@ -23,6 +23,15 @@ describe('link replacing', () => {
       expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt');}");
     });
 
+    it('does not rewrite about:blank', () => {
+      const translated = css(
+        "body{background-image:url('//about:blank');}",
+        new Map(),
+        'http://example.com'
+      );
+      expect(translated).to.equal("body{background-image:url('//about:blank');}");
+    });
+
     it('replaces unquoted CSS links', () => {
       const translated = css(
         'body{background-image:url(./1.txt);}',
@@ -125,6 +134,16 @@ describe('link replacing', () => {
         'http://example.com'
       );
       expect(translated).to.equal(wrap`<img src='http://testim.io/1.txt'>`);
+    });
+
+
+    it('does not replace about:blank', () => {
+      const translated = html(
+        wrap`<img src='//about:blank'>`,
+        new Map(),
+        'http://example.com'
+      );
+      expect(translated).to.equal(wrap`<img src='//about:blank'>`);
     });
 
     it('replaces unescaped img src tags', () => {
