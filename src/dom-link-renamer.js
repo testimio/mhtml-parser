@@ -205,10 +205,14 @@ class Generator {
     }
     let lastSeenHash = '';
     const resolveLink = link => {
-      let url = new URL(link, this.baseUrl);
-      lastSeenHash = url.hash;
-      url.hash = '';
-      return url.toString();
+      try {
+        let url = new URL(link, this.baseUrl);
+        lastSeenHash = url.hash;
+        url.hash = '';
+        return url.toString();
+      } catch (e) {
+        return link
+      }
     };
     if (attribute === attrs.SRCSET) {
       return fromHtml.split(' ').map(resolveLink).map(part => this.mapping.get(part) || part).join(' ');

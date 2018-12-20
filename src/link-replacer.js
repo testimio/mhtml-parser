@@ -47,10 +47,14 @@ module.exports = {
       if (match.charAt(0) === '/' && match.charAt(1) === '/') { // protocol agnostic URL
         match = `http:${match}`;
       }
-      const link = new URL(match, baseUrl).toString();
-      const mapped = resourcesMap.get(link) || link;
-      /* eslint-disable prefer-template */ // hot point
-      return start + mapped + end;
+      try {
+        const link = new URL(match, baseUrl).toString();
+        const mapped = resourcesMap.get(link) || link;
+        /* eslint-disable prefer-template */ // hot point
+        return start + mapped + end;
+      } catch (e) {
+        return whole;
+      }
     });
   },
   cssWithAst(cssString, resourcesMap, baseUrl) {
@@ -61,14 +65,18 @@ module.exports = {
         return;
       }
       const { value } = node;
-      if (value.type === 'Raw') {
-        const link = new URL(value.value, baseUrl).toString();
-        const mapped = resourcesMap.get(link) || link;
-        value.value = `'${mapped}'`;
-      } else {
-        const link = new URL(value.value.substr(1, value.value.length - 2), baseUrl).toString();
-        const mapped = resourcesMap.get(link) || link;
-        value.value = `'${mapped}'`;
+      try {
+        if (value.type === 'Raw') {
+          const link = new URL(value.value, baseUrl).toString();
+          const mapped = resourcesMap.get(link) || link;
+          value.value = `'${mapped}'`;
+        } else {
+          const link = new URL(value.value.substr(1, value.value.length - 2), baseUrl).toString();
+          const mapped = resourcesMap.get(link) || link;
+          value.value = `'${mapped}'`;
+        }
+      } catch (e) {
+        
       }
     });
     return csstree.generate(ast);
