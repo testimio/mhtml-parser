@@ -8,7 +8,7 @@ let generator;
 const CSS_REPLACE_RE = /url\(['"]?(?!["']?data)(.+?)['"]?\)/g;
 
 function makeUrl(url, baseUrl) {
-  if (baseUrl.indexOf('blob:') === 0 || url.indexOf('blob:') === 0) {
+  if (baseUrl && (baseUrl.indexOf('blob:') === 0 || url.indexOf('blob:') === 0)) {
     return url;
   }
   return new URL(url, baseUrl).toString();
@@ -57,7 +57,7 @@ module.exports = {
         if (match.indexOf('&quot;') === 0 && match.indexOf('&quot;', 1) !== -1) {
           match = match.slice(6, match.length - 6);
         }
-      } 
+      }
       try {
         const link = makeUrl(match, baseUrl);
         const mapped = resourcesMap.get(link) || link;
@@ -102,7 +102,7 @@ module.exports = {
     const pageBase = $('base[href]').attr('href');
 
     if (pageBase) {
-      baseUrl = new URL(pageBase, baseUrl);
+      baseUrl = makeUrl(pageBase, baseUrl);
     }
 
     // img, picture, audio, video, script, source, iframe
