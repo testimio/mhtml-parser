@@ -7,6 +7,12 @@ let generator;
 
 const CSS_REPLACE_RE = /url\(['"]?(?!["']?data)(.+?)['"]?\)/g;
 
+function makeUrl(url, baseUrl) {
+  if (baseUrl.indexOf('blob:') === 0 || url.indexOf('blob:') === 0) {
+    return url;
+  }
+  return new URL(url, baseUrl).toString();
+}
 module.exports = {
   html(domBuffer, resourcesMap, baseUrl) {
     const gotString = typeof domBuffer === 'string';
@@ -29,7 +35,7 @@ module.exports = {
     const $ = cheerio.load(svgString, { xmlMode: true });
     $('[href],[xlink\\:href]').each((i, el) => {
       el = $(el);
-      const link = new URL(el.attr('href') || el.attr('xlink:href'), baseUrl).toString();
+      const link = makeUrl(el.attr('href') || el.attr('xlink:href'), baseUrl);
       const mapped = resourcesMap.get(link) || link;
       el.removeAttr('xlink:href');
       el.attr('href', mapped);
@@ -47,8 +53,13 @@ module.exports = {
       if (match.charAt(0) === '/' && match.charAt(1) === '/') { // protocol agnostic URL
         match = `http:${match}`;
       }
+      if (match.charAt(0) === '&') {
+        if (match.indexOf('&quot;') === 0 && match.indexOf('&quot;', 1) !== -1) {
+          match = match.slice(6, match.length - 6);
+        }
+      } 
       try {
-        const link = new URL(match, baseUrl).toString();
+        const link = makeUrl(match, baseUrl);
         const mapped = resourcesMap.get(link) || link;
         /* eslint-disable prefer-template */ // hot point
         return start + mapped + end;
@@ -67,11 +78,11 @@ module.exports = {
       const { value } = node;
       try {
         if (value.type === 'Raw') {
-          const link = new URL(value.value, baseUrl).toString();
+          const link = makeUrl(value.value, baseUrl);
           const mapped = resourcesMap.get(link) || link;
           value.value = `'${mapped}'`;
         } else {
-          const link = new URL(value.value.substr(1, value.value.length - 2), baseUrl).toString();
+          const link = makeUrl(value.value.substr(1, value.value.length - 2), baseUrl);
           const mapped = resourcesMap.get(link) || link;
           value.value = `'${mapped}'`;
         }
@@ -98,7 +109,7 @@ module.exports = {
 
     $('[src]').each((i, el) => {
       el = $(el);
-      const link = new URL(el.attr('src'), baseUrl).toString();
+      const link = makeUrl(el.attr('src'), baseUrl);
       const mapped = resourcesMap.get(link) || link;
       el.attr('src', mapped);
     });
@@ -106,21 +117,21 @@ module.exports = {
     $('[srcset]').each((i, el) => {
       el = $(el);
       const sources = el.attr('srcset').split(' ');
-      el.attr('srcset', sources.map(src => new URL(src, baseUrl).toString()).map(m => resourcesMap.get(m) || m));
+      el.attr('srcset', sources.map(src => makeUrl(src, baseUrl)).map(m => resourcesMap.get(m) || m));
     });
 
     // css imports and link rel prefetch/prerender
 
     $('link[href]').each((i, el) => {
       el = $(el);
-      const link = new URL(el.attr('href'), baseUrl).toString();
+      const link = makeUrl(el.attr('href'), baseUrl);
       const mapped = resourcesMap.get(link) || link;
       el.attr('href', mapped);
     });
 
     $('svg').find('[href],[xlink\\:href]').each((i, el) => {
       el = $(el);
-      const link = new URL(el.attr('href') || el.attr('xlink:href'), baseUrl).toString();
+      const link = makeUrl(el.attr('href') || el.attr('xlink:href'), baseUrl);
       const mapped = resourcesMap.get(link) || link;
       el.removeAttr('xlink:href');
       el.attr('href', mapped);
@@ -146,7 +157,7 @@ module.exports = {
 
     $('applet[code]').each((i, el) => {
       el = $(el);
-      const link = new URL(el.attr('code'), baseUrl).toString();
+      const link = makeUrl(el.attr('code'), baseUrl);
       const mapped = resourcesMap.get(link) || link;
       el.attr('code', mapped);
     });
