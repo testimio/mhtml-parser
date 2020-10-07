@@ -1,9 +1,16 @@
-const { decode } = require('64');
+const decodeBase64 = (() => {
+  try {
+    // eslint-disable-next-line
+    return require('64').decode;
+  } catch (e) {
+    return data => Buffer.from(data.toString(), 'base64');
+  }
+})();
 
 module.exports = (encoding, body) => {
   switch (encoding) {
     case 'base64':
-      return decode(body);
+      return decodeBase64(body);
     case 'quoted-printable':
       return convertQuotedPrintable(body);
     case '8bit':
