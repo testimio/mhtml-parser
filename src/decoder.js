@@ -1,11 +1,4 @@
-const decodeBase64 = (() => {
-  try {
-    // eslint-disable-next-line
-    return require('64').decode;
-  } catch (e) {
-    return data => Buffer.from(data.toString(), 'base64');
-  }
-})();
+const decodeBase64 = data => Buffer.from(data.toString().replace(/\r|\n/g, ''), 'base64');
 
 module.exports = (encoding, body) => {
   switch (encoding) {

@@ -13,13 +13,6 @@ files to be in the demos directory (for example, try opening `http://localhost:8
 npm i fast-mhtml
 ```
 
-### Optional 64 dependency
-
-If you're running node <= 10, you may run `npm install 64`,
-Which, compared to the native base64 conversion, is faster and is simd-based.
-
-On node > 10, `fast-mhtml` will use the native conversion.
-
 ## MHTML Parser
 
 Parses MHTML files.
