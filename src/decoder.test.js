@@ -56,6 +56,13 @@ describe('decoding', () => {
     expect(decoder('binary', Buffer.from('Hello')).toString()).to.equal('Hello');
   });
 
+  it('decodes quoted printable at end of input', () => {
+    expect(
+      decoder('quoted-printable',
+        Buffer.from('Hello World =3E')).toString()
+    ).to.equal('Hello World >');
+  });
+
   it('throws on unknown encodings', () => {
     expect(() => decoder('kaka', Buffer.from('hello'))).to.throw();
   });

@@ -35,10 +35,9 @@ function convertQuotedPrintable(body) {
   const len = body.length;
   const decoded = Buffer.alloc(len); // at most this big
   let j = 0;
-  const runTo = len - 3;
-  for (let i = 0; i < runTo; i++) {
-    while (i < runTo && (decoded[j++] = body[i++]) !== EQUALS);
-    if (i >= runTo) break;
+  for (let i = 0; i < len; i++) {
+    while (i < len && (decoded[j++] = body[i++]) !== EQUALS);
+    if (i >= len) break;
     // We are dealing with a '=xx' sequence.
     const upper = body[i];
     const lower = body[++i];
@@ -67,9 +66,6 @@ function convertQuotedPrintable(body) {
     }
     const shifted = upperTranslated << 4;
     decoded[j - 1] = shifted | lowerTranslated;
-  }
-  for (let i = runTo; i < len; i++) {
-    decoded[j++] = body[i];
   }
   return decoded.slice(0, j);
 }
