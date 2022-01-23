@@ -38,7 +38,6 @@ describe('the mhtml parser', () => {
     expect(results[0].content.trim()).to.equal('<html><body><img src="http!example.com!1.jpg"></body></html>');
   });
 
-
   it('parses mime types of frames', () => {
     const mhtml = build([{
       body: "<html><body><img src='http://example.com/1.jpg'></body></html>",
@@ -254,7 +253,6 @@ describe('the mhtml parser', () => {
     expect(results[0].content.trim()).to.equal("body{background-image:url('http://example.com/1.jpg');}");
   });
 });
-
 
 function build(contents) {
   function buildPart(part) {

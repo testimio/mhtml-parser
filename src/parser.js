@@ -68,10 +68,10 @@ module.exports = class Parser {
 
   rewrite() {
     const entries = this.parts
-      .filter(part => part.location)
-      .map(part => [part.location.trim(), this.rewriteFn(part.location).trim()]);
+      .filter((part) => part.location)
+      .map((part) => [part.location.trim(), this.rewriteFn(part.location).trim()]);
     const rewriteMap = new Map(entries);
-    for (const part of this.parts.filter(x => x.id)) {
+    for (const part of this.parts.filter((x) => x.id)) {
       rewriteMap.set(`cid:${part.id}`, this.rewriteFn(part.location || part.id.trim()));
     }
     for (const part of this.parts) {
@@ -79,14 +79,14 @@ module.exports = class Parser {
         'text/html': linkReplacer.html,
         'text/css': linkReplacer.css,
         'image/svg+xml': linkReplacer.svg,
-      })[part.type] || (body => body);
+      })[part.type] || ((body) => body);
       part.body = replacer(part.body, rewriteMap, part.location);
     }
     return this;
   }
 
   spit() {
-    return this.parts.map(part => ({
+    return this.parts.map((part) => ({
       filename: this.rewriteFn(part.location || part.id),
       content: this.gotString ? part.body.toString() : part.body,
       type: part.type,
@@ -103,7 +103,7 @@ module.exports = class Parser {
     }
     const body = part.slice(startBody);
     const headers = new Map(headerPart.split(/\r?\n/g)
-      .map(header => header.split(': '))
+      .map((header) => header.split(': '))
       .map(([key, value]) => [key.toLowerCase(), value]));
     return {
       location: headers.get('content-location'),

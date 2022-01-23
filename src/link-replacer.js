@@ -117,7 +117,7 @@ module.exports = {
     $('[srcset]').each((i, el) => {
       el = $(el);
       const sources = el.attr('srcset').split(' ');
-      el.attr('srcset', sources.map(src => makeUrl(src, baseUrl)).map(m => resourcesMap.get(m) || m));
+      el.attr('srcset', sources.map((src) => makeUrl(src, baseUrl)).map((m) => resourcesMap.get(m) || m));
     });
 
     // css imports and link rel prefetch/prerender

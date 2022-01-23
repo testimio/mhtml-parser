@@ -125,7 +125,7 @@ describe('link replacing', () => {
   });
 
   describe('html', () => {
-    const wrap = el => `<html><head></head><body>${el}</body></html>`;
+    const wrap = (el) => `<html><head></head><body>${el}</body></html>`;
 
     it('replaces img src tags', () => {
       const translated = html(
@@ -135,7 +135,6 @@ describe('link replacing', () => {
       );
       expect(translated).to.equal(wrap`<img src='http://testim.io/1.txt'>`);
     });
-
 
     it('does not replace about:blank', () => {
       const translated = html(
@@ -172,7 +171,6 @@ describe('link replacing', () => {
       );
       expect(translated).to.equal(wrap`<img kaka data foo=bar src=http://testim.io/1.txt>`);
     });
-
 
     it('ignores hash in urls', () => {
       const translated = html(
@@ -357,9 +355,8 @@ describe('link replacing', () => {
     });
   });
 
-
   describe('html with cheerio', () => {
-    const wrap = el => `<html><head></head><body>${el}</body></html>`;
+    const wrap = (el) => `<html><head></head><body>${el}</body></html>`;
 
     it('replaces img src tags', () => {
       const translated = htmlWithCheerio(

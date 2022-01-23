@@ -7,46 +7,60 @@ describe('decoding', () => {
   });
   it('decodes quoted printable', () => {
     expect(
-      decoder('quoted-printable',
-        Buffer.from('Hello =3D World')).toString()
+      decoder(
+        'quoted-printable',
+        Buffer.from('Hello =3D World')
+      ).toString()
     ).to.equal('Hello = World');
   });
 
   it('decodes quoted printable removing newlines', () => {
     expect(
-      decoder('quoted-printable',
-        Buffer.from('Hello =\nWorld')).toString()
+      decoder(
+        'quoted-printable',
+        Buffer.from('Hello =\nWorld')
+      ).toString()
     ).to.equal('Hello World'); expect(
-      decoder('quoted-printable',
-        Buffer.from('Hello =\r\nWorld')).toString()
+      decoder(
+        'quoted-printable',
+        Buffer.from('Hello =\r\nWorld')
+      ).toString()
     ).to.equal('Hello World');
   });
 
   it('decodes quoted printable ignoring invalid seqs', () => {
     expect(
-      decoder('quoted-printable',
-        Buffer.from('Hello =World')).toString()
+      decoder(
+        'quoted-printable',
+        Buffer.from('Hello =World')
+      ).toString()
     ).to.equal('Hello =World');
   });
 
   it('decodes quoted printable non = chars', () => {
     expect(
-      decoder('quoted-printable',
-        Buffer.from('Hello =3E World')).toString()
+      decoder(
+        'quoted-printable',
+        Buffer.from('Hello =3E World')
+      ).toString()
     ).to.equal('Hello > World');
   });
 
   it('decodes quoted printable non = nums', () => {
     expect(
-      decoder('quoted-printable',
-        Buffer.from('Hello =66 World')).toString()
+      decoder(
+        'quoted-printable',
+        Buffer.from('Hello =66 World')
+      ).toString()
     ).to.equal('Hello f World');
   });
 
   it('decodes quoted printable on invalid lower sequences', () => {
     expect(
-      decoder('quoted-printable',
-        Buffer.from('Hello =6K World')).toString()
+      decoder(
+        'quoted-printable',
+        Buffer.from('Hello =6K World')
+      ).toString()
     ).to.equal('Hello =6K World');
   });
 
@@ -58,8 +72,10 @@ describe('decoding', () => {
 
   it('decodes quoted printable at end of input', () => {
     expect(
-      decoder('quoted-printable',
-        Buffer.from('Hello World =3E')).toString()
+      decoder(
+        'quoted-printable',
+        Buffer.from('Hello World =3E')
+      ).toString()
     ).to.equal('Hello World >');
   });
 
