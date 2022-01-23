@@ -28,7 +28,7 @@
   "dependencies": {
     "bluebird": "^3.7.2",
     "cheerio": "^1.0.0-rc.10",
-    "css-tree": "^1.0.0-alpha.39",
+    "css-tree": "^2.0.4",
     "express": "^4.17.2",
     "filenamify": "^4.3.0"
   },

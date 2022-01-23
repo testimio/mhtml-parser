@@ -77,15 +77,9 @@ module.exports = {
       }
       const { value } = node;
       try {
-        if (value.type === 'Raw') {
-          const link = makeUrl(value.value, baseUrl);
-          const mapped = resourcesMap.get(link) || link;
-          value.value = `'${mapped}'`;
-        } else {
-          const link = makeUrl(value.value.substr(1, value.value.length - 2), baseUrl);
-          const mapped = resourcesMap.get(link) || link;
-          value.value = `'${mapped}'`;
-        }
+        const link = makeUrl(value, baseUrl);
+        const mapped = resourcesMap.get(link) || link;
+        node.value = `'${mapped}'`;
       } catch (e) {
         // ignore unable to map
       }
