@@ -15,8 +15,8 @@ module.exports = class Processor {
   static convert(inputFileName) {
     const parser = new Parser({});
     const fp = promised(fs.readFile, inputFileName);
-    return fp.then(data => parser.parse(data).rewrite().spit())
-      .then(spitFiles => Promise.all(spitFiles.map(({ filename, content }, index) => {
+    return fp.then((data) => parser.parse(data).rewrite().spit())
+      .then((spitFiles) => Promise.all(spitFiles.map(({ filename, content }, index) => {
         let r = Promise.resolve();
         if (index === 0 && path.extname(filename) !== '.html') {
           r = r.then(() => promised(fs.writeFile, `./out/${filename}.html`, content));
@@ -34,7 +34,7 @@ module.exports = class Processor {
         fileCache.clear(); // empty cache
         const parser = new Parser({ });
         const fp = promised(fs.readFile, `./demos/${file}`);
-        fp.then(data => parser.parse(data).rewrite().spit()).then((spitFiles) => {
+        fp.then((data) => parser.parse(data).rewrite().spit()).then((spitFiles) => {
           for (const result of spitFiles) {
             fileCache.set(result.filename.replace(/#.*/, ''), result); // remove hash and set in cache
           }

@@ -1,6 +1,5 @@
 const { URL } = require('url'); // url isn't global in Node < 8
 
-
 const MAX_EXTRA_SPACE = 1024 * 1024 * 5; // 5mb
 const attrs = {
   SRC: 1,
@@ -14,13 +13,14 @@ const attrs = {
 };
 
 function generateIs(str) {
-  str = str.split('').map(x => x.replace(':', 'COLON'));
+  str = str.split('').map((x) => x.replace(':', 'COLON'));
   const mapBack = (s) => {
     if (s === 'COLON') return ':';
     return s;
   };
+
   const body = str
-    .map(s => `(${s} === ${mapBack(s).toLowerCase().charCodeAt(0)} || ${s} === ${mapBack(s).toUpperCase().charCodeAt(0)})`)
+    .map((s) => `(${s} === ${mapBack(s).toLowerCase().charCodeAt(0)} || ${s} === ${mapBack(s).toUpperCase().charCodeAt(0)})`)
     .join(' && ');
   /* eslint-disable */
   return Function(...str, `return ${body}`);

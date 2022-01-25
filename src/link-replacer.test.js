@@ -76,7 +76,7 @@ describe('link replacing', () => {
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
         'http://example.com'
       );
-      expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt')}");
+      expect(translated).to.equal("body{background-image:url(\\'http://testim.io/1.txt\\')}");
     });
     it('replaces relative CSS links', () => {
       const translated = cssWithAst(
@@ -84,7 +84,7 @@ describe('link replacing', () => {
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
         'http://example.com'
       );
-      expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt')}");
+      expect(translated).to.equal("body{background-image:url(\\'http://testim.io/1.txt\\')}");
     });
 
     it('replaces unquoted CSS links', () => {
@@ -93,7 +93,7 @@ describe('link replacing', () => {
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
         'http://example.com'
       );
-      expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt')}");
+      expect(translated).to.equal("body{background-image:url(\\'http://testim.io/1.txt\\')}");
     });
 
     it('works with protocol agnostic urls', () => {
@@ -102,7 +102,7 @@ describe('link replacing', () => {
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
         'http://example.com'
       );
-      expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt')}");
+      expect(translated).to.equal("body{background-image:url(\\'http://testim.io/1.txt\\')}");
     });
 
     it('replaces unquoted absolute CSS links', () => {
@@ -111,7 +111,7 @@ describe('link replacing', () => {
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
         'http://example.com'
       );
-      expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt')}");
+      expect(translated).to.equal("body{background-image:url(\\'http://testim.io/1.txt\\')}");
     });
     it('replaces multiple CSS links', () => {
       const translated = cssWithAst(
@@ -119,13 +119,13 @@ describe('link replacing', () => {
         new Map([['http://example.com/1.txt', 'http://testim.io/1.txt']]),
         'http://example.com'
       );
-      expect(translated).to.equal("body{background-image:url('http://testim.io/1.txt');"
-      + "background:url('http://testim.io/1.txt');font:url('http://testim.io/1.txt')}");
+      expect(translated).to.equal("body{background-image:url(\\'http://testim.io/1.txt\\');"
+      + "background:url(\\'http://testim.io/1.txt\\');font:url(\\'http://testim.io/1.txt\\')}");
     });
   });
 
   describe('html', () => {
-    const wrap = el => `<html><head></head><body>${el}</body></html>`;
+    const wrap = (el) => `<html><head></head><body>${el}</body></html>`;
 
     it('replaces img src tags', () => {
       const translated = html(
@@ -135,7 +135,6 @@ describe('link replacing', () => {
       );
       expect(translated).to.equal(wrap`<img src='http://testim.io/1.txt'>`);
     });
-
 
     it('does not replace about:blank', () => {
       const translated = html(
@@ -172,7 +171,6 @@ describe('link replacing', () => {
       );
       expect(translated).to.equal(wrap`<img kaka data foo=bar src=http://testim.io/1.txt>`);
     });
-
 
     it('ignores hash in urls', () => {
       const translated = html(
@@ -357,9 +355,8 @@ describe('link replacing', () => {
     });
   });
 
-
   describe('html with cheerio', () => {
-    const wrap = el => `<html><head></head><body>${el}</body></html>`;
+    const wrap = (el) => `<html><head></head><body>${el}</body></html>`;
 
     it('replaces img src tags', () => {
       const translated = htmlWithCheerio(

@@ -1,4 +1,4 @@
-const decodeBase64 = data => Buffer.from(data.toString().replace(/\r|\n/g, ''), 'base64');
+const decodeBase64 = (data) => Buffer.from(data.toString().replace(/\r|\n/g, ''), 'base64');
 
 module.exports = (encoding, body) => {
   switch (encoding) {
